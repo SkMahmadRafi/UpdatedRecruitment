@@ -1,0 +1,214 @@
+<div class="container" [formGroup]="recruiterData">
+
+  <div class="col-md-12 " >
+    <mat-card>
+      <div class="spaceL" id="div1">
+        <button mat-raised-button color="primary"  (click)="assesmentStart()">Assesment-Start</button>
+      </div>
+      <div class="spaceL" id="div2">
+        <label>Assessment-Id:{{Asid}}</label>
+      </div>
+
+      <div class="spaceL" id="div3"> 
+        <label>Date: {{Today | date:'MMM-dd'}}</label>
+      </div>
+
+      
+      <!--  -->
+      <div id="div1">
+        <div  class="dropdown profiledata" >
+          <!-- <mat-icon class="dropbtn profile"></mat-icon> -->
+          <label class="dropbtn color-size" ><mat-icon >account_box</mat-icon></label>
+          <div class="dropdown-content">
+          <mat-card>
+          <span href="#"><b>Id : {{  CId }}</b></span><br>
+          <span href="#"><b>Name : {{ CName}}</b></span><br>
+          <span><b>{{Email}}</b></span>
+          <span></span>
+          </mat-card>
+          </div>
+        </div>
+      </div>  
+
+
+      <div  class="dropdown skills" id="div2">   
+        <label class="dropbtn color-size">Skills</label>
+         <div class="dropdown-content">
+          <mat-card *ngFor="let skill of Myskills">
+            <span >{{skill.skilllevel}} </span>
+            <span class="margin">{{skill.name}}</span><br>
+          </mat-card>
+         </div>
+     </div>
+
+      
+      
+    
+   <div  id="div5" class="margin">
+    
+    <mat-icon (click)="prevQA()" class="margintop">keyboard_arrow_left</mat-icon>
+    <mat-icon (click)="nextQA()" class="margintop">keyboard_arrow_right</mat-icon>  
+  </div>
+   
+    </mat-card>
+     
+  </div>
+  
+  
+  <div class="col-lg-9">
+    <mat-card class="size QACard_size">
+      <div class="size" *ngFor="let data of newArry| paginate: { itemsPerPage: 1, currentPage: p }" >
+        <h3  class="red" id="div1"><b> {{newArry[0].question}}</b> </h3>
+        <span class="QANumber">{{newArry[0].currentRecordId}}/{{newArry[0].lastRecordId}}</span>
+        <span id="div2"><mat-icon id="div1" class="position" *ngIf="hideMe" (click)="hideAnswer()">keyboard_arrow_down</mat-icon></span><br>
+        <h3 *ngIf="showMe" id="div"><b></b>{{newArry[0].answer}}</h3>
+      </div> 
+    </mat-card>
+    
+  </div>
+
+  <div class="col-lg-3 ">
+    <mat-card class="size">
+      <div class="col-lg-7">
+        <label>Skill:</label>
+        <h4> </h4>
+        <label>Complexity: </label>
+        <h4></h4>
+      </div>
+      <div class="col-lg-5">
+        
+        <div>
+          <label>Score :</label> <br>
+            <mat-slider (click)="updateSetting(value)"  formControlName="score"
+            [(ngModel)]="value"
+              class="slider"  thumbLabel [vertical]="true"
+              tickInterval="1" step="1" min="0"max="10" aria-label="text" >
+              <input matSliderThumb >
+            </mat-slider>  
+        </div>
+        <!-- <label class="space" *ngIf="resume">{{sliderOutput}}</label> -->
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="col-lg-8">
+    <mat-card class="size">
+      <div>
+        <angular-editor id="editor2" placeholder="Note" [config]="editorConfig1" formControlName="note"  [(ngModel)]="value1">    
+        </angular-editor>    
+    </div>
+    </mat-card>
+    
+  </div>
+  <div class="col-lg-4">
+    <mat-card class="size">
+      <div id="div2" >
+        <label> Key Words :</label><br>
+         {{keywordzz}}
+      </div>
+    </mat-card>
+  </div>
+<div class="end-assesment">
+  <button class="btn btn-danger" routerLink="/Candidate-Info" (click)="saveData()">End-Assesment</button>
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- <form [formGroup]="recruiterData">
+  <br>
+  <div class="container">
+    <mat-card class="container-fluid">
+    <div class="div-inline">
+      
+      <div class="spaceL" id="div1">
+        <button mat-raised-button color="primary" class="color" (click)="assesmentStart()">Assesment-Start</button>
+      </div>
+
+      <div class="spaceL" id="div2">
+        <span>Assessment-Id:{{Asid}}</span>
+      </div>
+
+      <div class="spaceL" id="div3">
+        
+        <span>Date: {{Today | date:'MMM-dd'}}</span>
+      </div>
+
+      <div  class="dropdown div" id="div4">
+          <mat-icon class="dropbtn">account_box</mat-icon>
+          <div class="dropdown-content">
+         
+          <mat-card>
+          <span href="#"><b>CandidateId : {{  CId }}</b></span><br>
+          <span href="#"><b>Name : {{ CName}}</b></span><br>
+          <span><b>{{Email}}</b></span>
+          <span></span>
+        </mat-card>
+          </div>
+      </div>
+
+      <div  class="dropdown div spaceL spaceleft" id="div5">
+       <span class="dropbtn" style=" font-size: 14px; color:black">Skills</span>
+        <div class="dropdown-content">
+       
+        <mat-card *ngFor="let skill of candidateSkill">
+        <span >{{skill.skillName}} </span>
+        <span class="float">{{skill.Name}}</span><br>
+        
+        </mat-card>
+        </div>
+    </div>
+
+      <div  id="div5" class="margin">
+        <span class="spaceL">{{newArry[0].currentRecordId}}/{{newArry[0].lastRecordId}}</span>
+        <mat-icon (click)="prevQA()" class="margintop">arrow_circle_left</mat-icon>
+        <mat-icon (click)="nextQA()" class="margintop">arrow_circle_right</mat-icon>  
+      </div> 
+    </div>   
+
+  <div class="size" >
+     
+    <h3  class="space red" id="div1"> {{newArry[0].Question}} </h3>
+    <span id="div2"><mat-icon id="div1" class="position" *ngIf="hideMe" (click)="hideAnswer()">visibility_off</mat-icon></span>
+    <h3 *ngIf="showMe" id="div"><b></b>{{newArry[0].Answer}}</h3>
+  </div>  <br>
+<div>
+  
+  <div class="space" id="div1">
+    
+      <label>Score :</label> 
+      <mat-slider (click)="updateSetting(value)" ngDefaultControl formControlName="score"
+      [(ngModel)]="value"
+      tickInterval="1" step="1" min="0"max="3" aria-label="text" >
+      </mat-slider>  
+    </div>
+    <label class="space" *ngIf="resume">{{ScoreData}}</label>
+    <div id="div2" >
+      <label for="">Key Words :</label>
+     {{keywordzz}}
+    </div>
+  </div>
+
+    <div class="">
+
+      <div id="div2" >
+        <label>Note</label> 
+        <angular-editor id="editor2" placeholder="Enter Here......" [config]="editorConfig1" formControlName="note">
+          
+        </angular-editor>    
+    </div>
+    
+  </div><br>
+
+  
+    <mat-card-footer>
+      <button class="endbutton" (click)="saveData()">End-Assesment</button>
+    </mat-card-footer>
+  </mat-card>
+ </div>
+ 
+</form> -->

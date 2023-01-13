@@ -1,0 +1,88 @@
+
+
+ <div class="container" >
+  <mat-card class="first_card">
+    <div class="div1">
+    <h2 >Add New Skill</h2>
+    <div>
+      <mat-form-field >
+        <input matInput type="text" [(ngModel)]="skill" placeholder="Enter skill" appearance="fill" >
+      </mat-form-field>
+      <button (click)="addSkill(skill)" class="left green" [disabled]="!skill">Add</button>
+      <p class="response"> {{Skillresponse}}</p>
+      <p class="response1">{{Skillresponse1}}</p>
+    </div>
+   
+    </div>
+    </mat-card> 
+ <mat-card>
+  <div class="div1">
+    <h2 >Add New Question and Answer</h2>
+     <mat-form-field class="width">
+         <mat-label> Skills </mat-label>
+         <mat-select  id="skillId" (valueChange)="getSelectedSkill($event)">
+           <mat-option *ngFor="let x of Skills" value="{{ x.skillid }}"  >{{ x.skillname }}</mat-option>
+         </mat-select>
+     </mat-form-field>
+
+      <mat-form-field class="left">
+      <mat-label> Complexity </mat-label>
+      <mat-select  id="cmpId" (valueChange)="getSelectedComplexity($event)">
+        <mat-option *ngFor="let x of Complexity" value="{{ x.cmpid }}"  >{{ x.name }}</mat-option>
+      </mat-select>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field class="input">
+      <mat-label> Question </mat-label>
+      <textarea matInput [(ngModel)]="Question" placeholder="Enter question"></textarea>
+      </mat-form-field><br>
+      <mat-form-field class="input">
+      <mat-label>Answer </mat-label>
+      <textarea matInput [(ngModel)]="answer" placeholder="Enter answer" class="aswer_area"></textarea>
+      </mat-form-field>
+      <mat-form-field class="input">
+        <input matInput placeholder="Keywords.."  [(ngModel)]="Keyword">
+      </mat-form-field>
+      <br/>
+      <!-- 
+      <textarea ></textarea> -->
+      <button type="submit" class="green" (click)="addQuestion(SkillId,ComplexityId,Question,answer,Keyword)"> Submit</button>
+      <!-- <button type="file" class="left" id="div1">Upload File</button>
+      <p class="response" id="div2">{{QAresponse}}</p> -->
+      </div> <br>
+
+
+      <div class="row">
+        <div id="div1" class="choose_file">
+          <label class="btn btn-default p-0">
+            <input type="file" (change)="selectFile($event)" accept=".csv,test/csv"/>
+          </label>
+        </div>
+      
+        <div id="div2" class="upload_button">
+          <button class="btn btn-success btn-sm" [disabled]="!selectedFiles"(click)="upload()">
+            Upload
+          </button>
+        </div>
+      </div>
+      <div *ngIf="currentFile" class="progress my-3">
+        <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress + '%' }">
+          {{ progress }}%
+        </div>
+      </div>
+      
+      <div *ngIf="message" class="alert alert-secondary" role="alert">
+        {{ message }}
+      </div>
+      <div class="card mt-3">
+        <!-- <div class="card-header">List of Files</div> -->
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let file of fileInfos | async" class="list-group-item">
+            <a href="{{ file.url }}">{{ file.name }}</a>
+          </li>
+        </ul>
+      </div>
+
+      </mat-card>
+</div>

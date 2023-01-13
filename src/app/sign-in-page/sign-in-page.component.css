@@ -1,0 +1,31 @@
+.sunny{
+
+    text-align: center;
+
+    /* min-height: 100%;
+
+    width: 20%; */
+
+    margin-top: 5%;
+
+    margin-left: 35%;
+
+}
+
+.card{
+
+   /* background-color: aliceblue; */
+
+   width: fit-content;
+
+}
+
+
+
+.card-body{
+
+    margin-left: 70%;
+
+    /* text-align: center; */
+
+}

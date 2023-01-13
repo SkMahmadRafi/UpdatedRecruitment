@@ -1,0 +1,103 @@
+
+  <!------------------ third and new-------------------- -->
+
+  <form [formGroup]="recruiterData" class="">
+    <div class="container-fluid">
+      <div>
+        <mat-card>
+       
+        <label>Choose Skill and Complexity to View Questions</label> <br>
+        <div id="div3" class="spaceL">
+          <mat-form-field >
+          <mat-label> Skill </mat-label>
+          <mat-select formControlName="skillId" ngDefaultControl (ngModelChange)="onSelectSkill($event)" >
+           <mat-option *ngFor="let x of Skill" value="{{x.skillid}}"(change)="onSelectSkill($event)"  >{{x.skillname}}</mat-option>
+          </mat-select>
+          </mat-form-field>
+        </div>
+        <div id="div2" class="spaceL">
+          <mat-form-field >
+            <mat-label> Complexity </mat-label>
+            <mat-select formControlName="level" ngDefaultControl (ngModelChange)="onSelectComple($event)">
+            <mat-option *ngFor="let x of Complexity" value="{{x.cmpid}}">{{x.name}}</mat-option>
+          </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div id="div3" class="spaceL">
+          <button routerLink="/addqa">Add Question</button>
+        </div>
+        <div id="div3" class="spaceL">
+          <button routerLink="/addqa">Add New Skill</button>
+        </div>
+      </mat-card>
+      </div>
+      <div>
+        <div class="size"  *ngFor="let item of arr  | paginate: { itemsPerPage: 5, currentPage: p   } ;let i=index">
+         
+            <mat-card style="overflow-y:scroll;min-height: 10vh;box-shadow: 2px;border: 3px;border-color: black;" >
+              <mat-card-header class="fixed">
+            
+          </mat-card-header>
+          <mat-card-content >
+            <tbody class="table-striped">
+              <mat-icon class="float" (click)="hideAnswer()">keyboard_arrow_down</mat-icon>
+              <!-- <button type="button" class="editBtn" data-bs-toggle="modal"
+                data-bs-target="#EditPop" ><mat-icon (click)="edit()" >mode_edit</mat-icon></button> -->
+              
+                <button type="button" data-bs-toggle="modal" data-bs-target="#EditPop" >
+                  <mat-icon  >mode_edit</mat-icon>
+                </button>
+               
+
+                <tr  class="info" >
+                 <b>Q </b>
+                 <b>{{i+1}}. {{ item.question }} </b><i class="arrow up" *ngIf="hideMe" (click)="hideAnswer()"></i>
+                  <br>
+                  
+                 <b> Ans:</b>
+                <span *ngIf="showMe" class="collapsible active color">{{ item.answer }} </span><br> <br>
+                </tr>
+            </tbody>
+          </mat-card-content>
+          </mat-card>
+          <br>
+          
+        </div>
+        <pagination-controls (pageChange)="p= $event"></pagination-controls>
+      </div>
+      
+      <br />
+    </div>
+  </form>
+
+  <div class="modal fade" id="EditPop" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Question and Answer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <form [formGroup]="formname">
+                        <!-- <label class="que"> question : {{item.question}} </label>
+                        <label class="ans"> answer :{{item.answer}}</label> -->
+                        <br>
+                      
+                          <input  placeholder="Question" formControlName="question">
+                          <input  placeholder="Answer" formControlName="answer">
+                        
+                  
+                        <button type="button" class="CancelBtn" data-bs-dismiss="modal"
+                          aria-label="Close">Cancel</button>
+                        <!-- <button class="btn btn-primary srchBtn" data-bs-dismiss="modal" aria-label="Close" 
+                        (click)="editListDtlDB ()" [disabled]="!myFormGroup.valid" >Update</button> -->
+                      </form>
+                    </div>
+                  </div>
+             
+                </div>
+              </div>
+            </div>

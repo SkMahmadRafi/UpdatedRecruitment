@@ -1,0 +1,27 @@
+<div class="container">
+    <!-- <div id="div2" class="leftspace" >
+        <mat-form-field class="width" >
+          <mat-label> Candidatestaus</mat-label>
+          <mat-select  [disabled]="arr[0].assessmentsStatus == 'notClosed' " >
+          >
+           <mat-option value="Open"> Open </mat-option>
+           
+          </mat-select>
+        </mat-form-field>
+        </div><br> -->
+        <div class="col-md-6">
+    <div *ngFor="let data of  val" class="col-md-6" >
+        <mat-card class=" size zoom ">
+          <div class="">
+            <span>AssessmentId: {{ data.assessmentId}}</span><br>
+            <span>Date: {{ data.date | date:'MM-dd-yyyy'}}</span><br>
+            <span>Assessmentstatus: {{ data.assessmentstatus}}</span>
+          </div>
+          <!-- <div class="score">
+            <button class="btn btn-danger">score</button>
+          </div> -->
+          </mat-card>
+    </div>
+    </div>
+    </div>
+    

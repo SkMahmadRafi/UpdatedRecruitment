@@ -1,0 +1,27 @@
+mat-card{
+    margin: 2%;
+    content: center;
+    min-height: 90px;
+    height: auto;
+}
+.container{
+    margin-top: 4%;
+    margin-left: 4%;
+}
+h1{
+    font-size: 50px;
+    margin-top: 2%;
+}
+.title{
+    font-size: 40px;
+    color: rgb(180, 57, 57);
+    margin-left: 2%;   
+}
+#section1{
+    height: 650 px;  
+    color: #fff;
+    background-image: url("https://attachments.office.net/owa/Vishwas.v%40jktech.com/service.svc/s/GetAttachmentThumbnail?id=AAMkADM5MjA3MjljLThkOGItNGY2YS05OWE0LTFlNzU0YTc3MmNmNgBGAAAAAABj2Eo6v598S5os0T65A7qZBwCp6K53DkLCTZDb26xIFUQ9AAAAAAEMAACp6K53DkLCTZDb26xIFUQ9AADMcDPVAAABEgAQAKMcT4ZrPf5HqNUouaTRtcU%3D&thumbnailType=2&token=eyJhbGciOiJSUzI1NiIsImtpZCI6IkQ4OThGN0RDMjk2ODQ1MDk1RUUwREZGQ0MzODBBOTM5NjUwNDNFNjQiLCJ0eXAiOiJKV1QiLCJ4NXQiOiIySmozM0Nsb1JRbGU0Tl84dzRDcE9XVUVQbVEifQ.eyJvcmlnaW4iOiJodHRwczovL291dGxvb2sub2ZmaWNlLmNvbSIsInVjIjoiOTQyNWIwY2I0NzBjNGE5MDlkNmVkZTQyYjliNWMwYjIiLCJzaWduaW5fc3RhdGUiOiJbXCJrbXNpXCJdIiwidmVyIjoiRXhjaGFuZ2UuQ2FsbGJhY2suVjEiLCJhcHBjdHhzZW5kZXIiOiJPd2FEb3dubG9hZEBhN2JhZTdmYS0wZGYxLTQ1NjItYTU1NC0xNmE5NWY1NGM4Y2UiLCJpc3NyaW5nIjoiV1ciLCJhcHBjdHgiOiJ7XCJtc2V4Y2hwcm90XCI6XCJvd2FcIixcInB1aWRcIjpcIjExNTM4MDExMjE1ODQ2MzU3MTVcIixcInNjb3BlXCI6XCJPd2FEb3dubG9hZFwiLFwib2lkXCI6XCI5YWI1ZjI4ZS0zNzBiLTQ4Y2EtOGY2NS0xNzNkZjkyZTY3ZWRcIixcInByaW1hcnlzaWRcIjpcIlMtMS01LTIxLTE2ODc3OTE2NDAtMjYwNDQyNTQ0Ni0yNTgxMDQ5NTE4LTM2NzgxNzk5XCJ9IiwibmJmIjoxNjcwNDc0NDQzLCJleHAiOjE2NzA0NzUwNDMsImlzcyI6IjAwMDAwMDAyLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMEBhN2JhZTdmYS0wZGYxLTQ1NjItYTU1NC0xNmE5NWY1NGM4Y2UiLCJhdWQiOiIwMDAwMDAwMi0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvYXR0YWNobWVudHMub2ZmaWNlLm5ldEBhN2JhZTdmYS0wZGYxLTQ1NjItYTU1NC0xNmE5NWY1NGM4Y2UiLCJoYXBwIjoib3dhIn0.gAOP8rxQ4wOe4PMw1ynYAfiW69Pny8YPHmzxWWbhuG23rOqgHrKHE2Z7Eg9NPPgYn-r1T087CtFrDFvX4KJ6ja2oqfmL3fFUPak00K20d5vpldTimJwmTc_FI4x6nFqKY_pit589NaohceqvSBqW7sr_WHEXxDcoqFwqlJ8jW_ZbBzMP1oR_TcSHT_6gPEWZuvjnHP7N0Z_GDPW3mP1Y4Yiaoxp0lvRbs8YFmi8I-1mEwOGBN4JILg6sdUZVcIJqTbTpKHEQ4u60x-LjfEvxiajGpntyN9ekILyREToM2tBUhveGtTSl6aTWDC_ncmp8ECaXQUEF4VS1fXNhbAVZLA&X-OWA-CANARY=pXQ_HY8KgEq3kYJtbpMxKHAKdKnW2NoYwPmUjhb8H4rA4oxVU48PHiKpEdio4U8648mwQYeqNSQ.&owa=outlook.office.com&scriptVer=20221124007.08&animation=true");  
+    background-size: 100% ;  
+    background-size: cover;
+   
+}

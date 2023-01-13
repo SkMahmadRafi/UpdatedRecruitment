@@ -1,0 +1,204 @@
+
+
+
+
+
+
+
+ <div class="backgroud">
+  <mat-card class="adjustable">
+    <mat-card-header>
+      <mat-card-title>Profile Creation</mat-card-title>
+      <div class="redirect_icon">
+        <mat-icon matTooltip="CandidateInfo Screen" routerLink="/Candidate-Info">output</mat-icon>
+       </div>
+    </mat-card-header>
+    <div class="input-group">
+      <form [formGroup]="fifthFormGroup" class="">
+        <div class="d-flex flex-row bd-highlight mb-3">
+          <div class="form-outline" id="div1">
+            <input type="search" id="form1" class="form-control" formControlName="searchEmail" placeholder=" Search EmailId" />
+          </div>
+          <div class="p" id="div2">
+            <mat-icon button type="button" class="iconE" (click)="checkExistingcandidate()">search</mat-icon>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <mat-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        
+        <form [formGroup]="firstFormGroup" class="">
+          <ng-template matStepLabel>Basic Info</ng-template>
+
+          <mat-form-field appearance="fill">
+            <mat-label>EmailId</mat-label>
+            <input matInput placeholder="EmailId" formControlName="email" required />
+          </mat-form-field>
+          
+          <br/>
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Full Name" formControlName="name" required /> </mat-form-field ><br />
+          <mat-form-field appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="Enter Phone number" formControlName="phone" required /> </mat-form-field><br />
+          <mat-form-field appearance="fill">
+            <mat-label>Experience</mat-label>
+            <input matInput placeholder="Enter Experience in years" formControlName="experience" required />
+          </mat-form-field>
+          <div class="basic-info-button">
+            <button mat-button matStepperNext class="green" (click)="showCandidateAssesmentStatus()">
+              Next
+            </button>
+            
+          </div>
+        </form>
+      </mat-step>
+
+      
+      <mat-step [stepControl]="skillFormGroup" label="Skills">
+
+        <form [formGroup]="skillFormGroup">
+          <div formArrayName="Skills">
+            <ng-container *ngFor="let skill of skillArray" >
+
+              <div id="div1" class="leftspacee" *ngIf="skillData">
+                <mat-form-field class="width" >
+                  <mat-label class="mskill"> {{ skill.skillname }} </mat-label>
+                  <mat-select formControlName="skillId" id="skillid"  ngDefaultControl  (ngModelChange)="onSelectSkill($event)">
+                   <mat-option  value="" (change)="onSelectSkill($event)"></mat-option>
+                 </mat-select>
+                </mat-form-field>
+              </div>
+    
+              <div id="div2" class="leftspaceee" *ngIf="skillData">
+                <mat-form-field class="width" >
+                  <mat-label class="mlevel"> {{ skill.skilllevel }} </mat-label>
+    
+                  <mat-select formControlName="cmpId" id="cmpid" ngDefaultControl  (ngModelChange)="onSelectSkill($event)">
+                 <mat-option *ngFor="let x of Complexity" value="{{ x.cmpid }}" (change)="onSelectSkill($event)">{{ x.Skilllevel }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+            </ng-container>
+            <ng-container  *ngFor="let skill of Skills.controls; let i = index" [formGroupName]="i" > 
+              <div id="div1" class="leftspace1">
+                <mat-form-field class="width">
+                  <mat-label> Skill </mat-label>
+                  <mat-select formControlName="skillId" id="skillId" ngDefaultControl (ngModelChange)="onSelectSkill($event)" >
+                    <mat-option *ngFor="let x of Skill" value="{{ x.skillid }}" (change)="onSelectSkill($event)" >{{ x.skillname }}</mat-option>        
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              
+              <div id="div2" class="leftspace">
+                <mat-form-field class="width">
+                  <mat-label> Complexity </mat-label>
+                  <mat-select formControlName="cmpId" id="cmpId" ngDefaultControl (ngModelChange)="onSelectSkill($event)">
+                    <mat-option *ngFor="let x of Complexity" value="{{ x.cmpid }}" (change)="onSelectSkill($event)" >{{ x.skilllevel }}</mat-option> 
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <br />
+            </ng-container>
+            <div id="div3" class="spaceL">
+              <button (click)="addNew()">Add-Skills</button>
+            </div>
+          </div>
+
+          <div class="skills-buttons" *ngIf="skillData">
+            <button mat-button matStepperPrevious class="color2">Back</button>
+            <button mat-button matStepperNext class="green" (click)="storeDatas()">Next</button>
+          </div>
+          <div class="submitt" *ngIf="skillData == null">
+            <button mat-button (click)="storeDatas()"  class="green">
+              Submit
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="thirdFormGroup" label="Assesment">
+        <form [formGroup]="thirdFormGroup">
+          <!-- <app-assessment-record></app-assessment-record> -->
+          <div class="container">
+            
+                <div class="col-md-10">
+            <div *ngFor="let data of val" class="col-md-8" >
+                <mat-card class="size zoom ">
+                  <div class="">
+                    <span>AssessmentId: {{ data.assessmentId}}</span><br>
+                    <span>Date: {{ data.date | date:'MM-dd-yyyy'}}</span><br>
+                    <span>Assessmentstatus: {{ data.assessmentstatus}}</span>
+                  </div>
+                 
+                  </mat-card>
+            </div>
+            </div>
+            </div>
+            
+
+
+
+          <div class="resume-buttons">
+            <button mat-button matStepperPrevious class="color2">Back</button>
+            <button mat-button matStepperNext class="green" (click)="next()">
+              Next
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="sixthFormGroup" label="Scheduler">
+        <form [formGroup]="sixthFormGroup">
+          <br />
+          <div class="para">
+            <p>Select below skill for Scheduling</p>
+          </div>
+          <hr/>
+      
+          <div class="col-md-12">
+            <div class="col-md-4" id="div1">
+              <section>
+                <form [formGroup]="form" novalidate>
+                  <div *ngFor="let skill of sArray; let i = index">
+                    <div class="chek">
+                      {{ skill.skillname }}
+                    </div>
+                    <input type="checkbox" class="checc" formArrayName="selected"  [value]="skill.skillid" (change)="onCheckboxChange($event)"/>    
+                  </div> 
+                  
+                </form>
+              </section>
+            </div>
+            <div class="col-md-4" id="div2">
+              
+              <mat-form-field>
+                <mat-label class="abcd">Choose a Date</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date"  (dateChange)="getEndDate('change', $event)">
+                <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                <mat-datepicker #picker  ></mat-datepicker>
+              </mat-form-field>
+              
+            </div>
+          </div>
+          <div class="nextback">
+            
+            <button mat-button matStepperPrevious class="color2">Back</button>
+            <button type="submit" class="submit" (click)="submit()">Submit</button>
+            
+            
+          </div>
+        </form>
+      </mat-step>
+
+     
+      
+    </mat-stepper>
+  </mat-card>
+</div>
+
+<router-outlet></router-outlet>

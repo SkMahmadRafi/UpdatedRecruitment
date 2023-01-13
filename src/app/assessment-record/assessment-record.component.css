@@ -1,0 +1,14 @@
+.size{
+    margin-top: 2%;
+    box-shadow: 0px 0px 10px 0px #aeabab,
+    0 1px 1px 0 #9f9999,
+    0 1px 3px 0 #a8a0a0;
+}
+.leftspace{
+    margin-top: 2%;
+    margin-left:40px;
+}
+mat-card{
+   margin-bottom:10%
+ }
+ 
