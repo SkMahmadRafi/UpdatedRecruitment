@@ -175,13 +175,17 @@ complexityN:any;
       response=>{
         console.log(response);
         this.newArry=response.result;
-        this.keywordload();
+        
        });
   }
   keywordload(){
     this.keywordzz=this.newArry[0].Answerkeywords;
+    
   }
- 
+ load(){
+  this.recruiterData.controls['score']=this.newArry[0].score;
+  this.recruiterData.controls['note']=this.newArry[0].Note;
+ }
 
   datastoring_response:any='';
   nextQA()
@@ -225,8 +229,9 @@ complexityN:any;
     let RowandQuestion_number=this.i;
     
     this.getQuestion(this.CId,RowandQuestion_number,this.Asid);
-   this.recruiterData.controls['score']=this.newArry[0].score;
-   this.recruiterData.controls['note']=this.newArry[0].Note;
+    
+  //  this.recruiterData.controls['score']=this.newArry[0].score;
+  //  this.recruiterData.controls['note']=this.newArry[0].Note;
    
   } 
   ScoreA:any=[];

@@ -227,8 +227,9 @@ export class ProfileCreationComponent implements OnInit{
   ).subscribe(
   response=>{
     console.log(response);
-    this.arr=response.data;
-    console.log(this.arr.assessmentsStatus)
+    this.arr=response.candidatesData;
+    console.log(this.arr,"arr");
+    console.log(this.arr.assessmentsStatus);
     console.log(this.arr);
     this.val=this.arr[0].assessments;
     console.log(this.val)
@@ -373,7 +374,7 @@ debugger
         console.log(response);
         this.sheduleMessage=response;
         
-        this.Mymessage=this.sheduleMessage.StatusMessage;
+        this.Mymessage=this.sheduleMessage.statusMessage.StatusMessage;
         console.log(this.Mymessage)
         console.log(this.sheduleMessage)
         alert(this.Mymessage)
