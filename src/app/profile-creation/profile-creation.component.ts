@@ -1,4 +1,4 @@
-import { HttpClient,HttpClientModule } from '@angular/common/http';
+import { HttpClient,HttpClientModule, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, EventEmitter, 
   Input, OnInit, OnChanges, Output, SimpleChanges, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -6,6 +6,7 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { FormArray,FormBuilder,FormControl,FormGroup,Validators,} from '@angular/forms';
 import { DataFileService } from '../data-file.service';
 import { FormData } from '../form-data'; 
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile-creation',
@@ -46,13 +47,22 @@ export class ProfileCreationComponent implements OnInit{
   public static Experiance: any = '';
   EmailforEdit:string='';
 
+
+  selectedFiles?: FileList;
+  currentFile?: File;
+  progress2 = 0;
+  message = '';
+
+  fileInfos?: Observable<any>;
+
   // Skill:any=[{skillId:'1',skillName:'C#'},{skillId:'2',skillName:'Angular'},{skillId:'3',skillName:'SQL'},{skillId:'4',skillName:'Azure'}];
 
   constructor(
     private _http: HttpClient,
     private formBuilder: FormBuilder,
     private elementRef: ElementRef,
-    private _service: DataFileService
+    private _service: DataFileService,
+    private UploadService:DataFileService
   ) {}
 
   ngOnInit(): void {
@@ -380,6 +390,56 @@ debugger
         alert(this.Mymessage)
       });
   }
+
+
+  selectFile(event: any): void {
+    // if(event.target.files.type=='text/csv' ||event.target.files.type=='.csv'){
+    //   this.selectedFiles = event.target.files;
+    // }else{
+    //   alert("Only CSV file can upload")
+    // }
+      this.selectedFiles = event.target.files;
+    }
+
+    
+  uploadProfile(): void {
+    debugger
+    this.progress2 = 0;
+
+    if (this.selectedFiles) {
+      const file: File | null = this.selectedFiles.item(0);
+
+      if (file) {
+        this.currentFile = file;
+
+        this.UploadService.uploadprofile(this.currentFile).subscribe({
+          next: (event: any) => {
+            if (event.type === HttpEventType.UploadProgress) {
+              this.progress2 = Math.round(100 * event.loaded / event.total);
+            } else if (event instanceof HttpResponse) {
+              this.message = event.body.message;
+              // this.fileInfos = this.uploadService.getFiles();
+            }
+          },
+          error: (err: any) => {
+            console.log(err);
+            this.progress2 = 0;
+
+            if (err.error && err.error.message) {
+              this.message = err.error.message;
+            } else {
+              this.message = 'Could not upload the file!';
+            }
+
+            this.currentFile = undefined;
+          }
+        });
+      }
+
+      this.selectedFiles = undefined;
+    }
+  }
+  
 
   
 }

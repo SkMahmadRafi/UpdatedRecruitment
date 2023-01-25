@@ -13,7 +13,9 @@
 } */
 
 
-
+.choose_file{
+   margin-left: 4%;
+ }
 
 
 mat-card{
@@ -238,11 +240,11 @@ button{
    color: blue;
    /* width: 10px; */
   }
-  .btn{
+  /* .btn{
    width: 10px;
-   /* margin-left: 190px; */
+   margin-left: 190px;
 
-  }
+  } */
   .p{
    margin-top: 4px;
    margin-left: 5px;

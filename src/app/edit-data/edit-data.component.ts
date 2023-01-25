@@ -30,6 +30,7 @@ Skillresponse1:any;
 selectedFiles?: FileList;
   currentFile?: File;
   progress = 0;
+  progress1 = 0;
   message = '';
 
   fileInfos?: Observable<any>;
@@ -43,7 +44,7 @@ selectedFiles?: FileList;
     debugger
     this.getSkills();
     this.getComplexity();
-    this.fileInfos = this.uploadService.getFiles();
+    // this.fileInfos = this.uploadService.getFiles();
   }
 
  
@@ -122,7 +123,7 @@ selectedFiles?: FileList;
     this.selectedFiles = event.target.files;
   }
 
-  upload(): void {
+  uploadskill(): void {
     debugger
     this.progress = 0;
 
@@ -132,13 +133,13 @@ selectedFiles?: FileList;
       if (file) {
         this.currentFile = file;
 
-        this.uploadService.upload(this.currentFile).subscribe({
+        this.uploadService.uploadskill(this.currentFile).subscribe({
           next: (event: any) => {
             if (event.type === HttpEventType.UploadProgress) {
               this.progress = Math.round(100 * event.loaded / event.total);
             } else if (event instanceof HttpResponse) {
               this.message = event.body.message;
-              this.fileInfos = this.uploadService.getFiles();
+              // this.fileInfos = this.uploadService.getFiles();
             }
           },
           error: (err: any) => {
@@ -159,4 +160,44 @@ selectedFiles?: FileList;
       this.selectedFiles = undefined;
     }
   }
+
+
+   uploadQA(): void {
+    debugger
+    this.progress1 = 0;
+
+    if (this.selectedFiles) {
+      const file: File | null = this.selectedFiles.item(0);
+
+      if (file) {
+        this.currentFile = file;
+
+        this.uploadService.uploadpQA(this.currentFile).subscribe({
+          next: (event: any) => {
+            if (event.type === HttpEventType.UploadProgress) {
+              this.progress1 = Math.round(100 * event.loaded / event.total);
+            } else if (event instanceof HttpResponse) {
+              this.message = event.body.message;
+              // this.fileInfos = this.uploadService.getFiles();
+            }
+          },
+          error: (err: any) => {
+            console.log(err);
+            this.progress1 = 0;
+
+            if (err.error && err.error.message) {
+              this.message = err.error.message;
+            } else {
+              this.message = 'Could not upload the file!';
+            }
+
+            this.currentFile = undefined;
+          }
+        });
+      }
+
+      this.selectedFiles = undefined;
+    }
+  }
+
 }

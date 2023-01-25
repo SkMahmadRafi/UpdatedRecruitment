@@ -12,9 +12,44 @@
       <p class="response"> {{Skillresponse}}</p>
       <p class="response1">{{Skillresponse1}}</p>
     </div>
-   
     </div>
-    </mat-card> 
+
+    <div class="row">
+      <div id="div1" class="choose_file">
+        <label class="btn btn-default p-0">
+          <input type="file" (change)="selectFile($event)" accept=".csv,test/csv"/>
+        </label>
+      </div>
+    
+      <div id="div2" class="upload_button">
+        <button class="btn btn-success btn-sm" [disabled]="!selectedFiles"(click)="uploadskill()">
+          Upload
+        </button>
+        
+      </div>
+      
+    </div>
+   
+    <div *ngIf="currentFile" class="progress my-3">
+      <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress + '%' }">
+        {{ progress }}%
+      </div>
+    </div>
+    <br>
+    
+    <div *ngIf="message" class="alert alert-secondary" role="alert">
+      {{ message }}
+    </div>
+    <div class="card mt-3">
+      <!-- <div class="card-header">List of Files</div> -->
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let file of fileInfos | async" class="list-group-item">
+          <a href="{{ file.url }}">{{ file.name }}</a>
+        </li>
+      </ul>
+    </div>
+
+   </mat-card> 
  <mat-card>
   <div class="div1">
     <h2 >Add New Question and Answer</h2>
@@ -52,7 +87,6 @@
       <p class="response" id="div2">{{QAresponse}}</p> -->
       </div> <br>
 
-
       <div class="row">
         <div id="div1" class="choose_file">
           <label class="btn btn-default p-0">
@@ -61,14 +95,17 @@
         </div>
       
         <div id="div2" class="upload_button">
-          <button class="btn btn-success btn-sm" [disabled]="!selectedFiles"(click)="upload()">
+          <button class="btn btn-success btn-sm" [disabled]="!selectedFiles"(click)="uploadQA()">
             Upload
           </button>
+          <br>
         </div>
+        
       </div>
+      <br>
       <div *ngIf="currentFile" class="progress my-3">
-        <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress + '%' }">
-          {{ progress }}%
+        <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ progress1 }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress1 + '%' }">
+          {{ progress1 }}%
         </div>
       </div>
       
@@ -83,6 +120,7 @@
           </li>
         </ul>
       </div>
+     
 
       </mat-card>
 </div>

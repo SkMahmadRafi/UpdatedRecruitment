@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class DataFileService {
 
-  baseUrl='http://20.192.1.163:3000/uploadFileManager';
+  baseUrl='http://localhost:3000/uploadFileManager';
 
   headers = new HttpHeaders({'Authorization':`Bearer ${userIdToken}`});
   arr:any=[];
@@ -131,15 +131,12 @@ export class DataFileService {
     },{headers:this.headers})
   }
 
-
-
-
-  upload(file: File): Observable<HttpEvent<any>> {
+  uploadprofile(file: File): Observable<HttpEvent<any>> {
     const formData: FormData = new FormData();
 
     formData.append('file', file);
 
-    const req = new HttpRequest('POST', `${this.baseUrl}/uploadFile`, formData, {
+    const req = new HttpRequest('POST', `${this.baseUrl}/uploadProfile`, formData, {
       reportProgress: true,
       responseType: 'json'
     });
@@ -147,7 +144,47 @@ export class DataFileService {
     return this._http.request(req);
   }
 
-  getFiles(): Observable<any> {
-    return this._http.get(`${this.baseUrl}/files`);
+  // getFiles(): Observable<any> {
+  //   return this._http.get(`${this.baseUrl}/uploadSKills`);
+  // }
+
+
+  uploadskill(file: File): Observable<HttpEvent<any>> {
+    const formData: FormData = new FormData();
+
+    formData.append('file', file);
+
+    const req = new HttpRequest('POST', `${this.baseUrl}/uploadSKills`, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+
+    return this._http.request(req);
   }
+
+  // getFiles(): Observable<any> {
+  //   return this._http.get(`${this.baseUrl}/files`);
+  // }
+
+ 
+
+
+  uploadpQA(file: File): Observable<HttpEvent<any>> {
+    const formData: FormData = new FormData();
+
+    formData.append('file', file);
+
+    const req = new HttpRequest('POST', `${this.baseUrl}/uploadQnA`, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+
+    return this._http.request(req);
+  }
+
+  // getFiles(): Observable<any> {
+  //   return this._http.get(`${this.baseUrl}/uploadSKills`);
+  // }
+
+
 }

@@ -1,11 +1,4 @@
-
-
-
-
-
-
-
- <div class="backgroud">
+<div class="backgroud">
   <mat-card class="adjustable">
     <mat-card-header>
       <mat-card-title>Profile Creation</mat-card-title>
@@ -48,6 +41,43 @@
             <mat-label>Experience</mat-label>
             <input matInput placeholder="Enter Experience in years" formControlName="experience" required />
           </mat-form-field>
+
+          <div class="row">
+
+          <div class="row">
+            <div id="div1" class="choose_file">
+              <label class="btn btn-default p-0">
+                <input type="file" (change)="selectFile($event)" accept=".csv,test/csv"/>
+              </label>
+            </div>
+          
+            <div id="div2" class="upload_button">
+              <button class="btn btn-success btn-sm" [disabled]="!selectedFiles"(click)="uploadProfile()">
+                Upload
+              </button>
+            </div>
+          </div>
+          <div *ngIf="currentFile" class="progress my-3">
+            <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ progress2 }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress2 + '%' }">
+              {{ progress2 }}%
+            </div>
+          </div>
+          
+          <div *ngIf="message" class="alert alert-secondary" role="alert">
+            {{ message }}
+          </div>
+          <div class="card mt-3">
+            <!-- <div class="card-header">List of Files</div> -->
+            <ul class="list-group list-group-flush">
+              <li *ngFor="let file of fileInfos | async" class="list-group-item">
+                <a href="{{ file.url }}">{{ file.name }}</a>
+              </li>
+            </ul>
+          </div>
+
+          
+          </div>
+
           <div class="basic-info-button">
             <button mat-button matStepperNext class="green" (click)="showCandidateAssesmentStatus()">
               Next
