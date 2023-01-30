@@ -19,21 +19,30 @@ export class SidebarContentComponent implements OnInit {
   arr: any = [];
   p: any = 0;
 
-  que:any = [];
-  ans:any = [];
+  // que:any = [];
+  // ans:any = [];
+
+
+  queId:any;
+  ansId:any;
+  answerKeywords:any;
+  cmpid:any;
 
   val:boolean= false;
   
   recruiterData = this.formBuilder.group({
     skillId: [''],
-    level: [''],
+    level: ['']
   });
+
   showMe: boolean = true;
   hideMe: boolean = false;
   hideMeI: boolean = false;
 
   skill = 0;
-  complexity = 0;
+  complexity:any;
+
+  popup:any = false;
   
   constructor(
     private formBuilder: FormBuilder,
@@ -65,38 +74,40 @@ export class SidebarContentComponent implements OnInit {
 
   formname =  this.formBuilder.group({
     question: [''],
-    answer: ['']
+    answer: [''],
+    answerkeywords: [''],
+    level: ['']
   })
 
 
-
-
-
- sendque(skillId: number, compId: number){
-    return this.httpClient
-    .post<any>('http://20.192.1.163:3000/qaManager/updateQ',{
-      compId,skillId
+  savechange(){
+    debugger;
+    let Question=this.formname.controls['question'].value;
+    let Answer=this.formname.controls['answer'].value;
+    let cmpid=this.formname.controls['level'].value;
+    let Answerkeywords=this.formname.controls['answerkeywords'].value;
+    let queId=this.queId;
+    let ansId=this.ansId;
+    this.httpClient
+      .post<any>('http://20.192.1.163:3000/qaManager/updateQ',{
+       Question,queId,cmpid
     },{headers:this.headers})
-    .subscribe((response)=>{
-      this.que = response.result;
-      console.log(this.que);
-    })
- }
+      .subscribe((response) => {
+        
+      });
 
+      this.httpClient
+      .post<any>('http://localhost:3000/qaManager/updateA',{
+       Answer,ansId,Answerkeywords
+    },{headers:this.headers})
+      .subscribe((response) => {
+        
+      });
 
- sendans(skillId: number, compId: number){
-  return this.httpClient
-  .post<any>('http://20.192.1.163:3000/qaManager/updateA',{
-    compId,skillId
-  },{headers:this.headers})
-  .subscribe((response)=>{
-    this.ans = response.result;
-    console.log(this.ans);
-  })
 }
 
 
-  getSkills() {
+ getSkills() {
     //  debugger;
     this.httpClient
       .get<any>('http://20.192.1.163:3000/skillsManager',{headers:this.headers})
@@ -124,6 +135,26 @@ export class SidebarContentComponent implements OnInit {
     this.hideMeI = true;
   }
   
+  edit(data:any){
+    debugger;
+    // console.log(data);
+    this.queId = data.queid;
+    this.ansId = data.ansid;
+    this.cmpid = data.cmpid;
+    this.answerKeywords = data.answerkeywords;
+   console.log(data.answerkeywords);
+   
+    this.formname.controls.question.setValue(data.question);
+    this.formname.controls.answerkeywords.setValue(data.answerkeywords);
+    this.formname.controls.level.setValue(this.complexity);
+    this.formname.controls.answer.setValue(data.answer);
+    
+    
+    
+    this.popup = true;
+  }
+
+
   arrayLength = 0;
  
   

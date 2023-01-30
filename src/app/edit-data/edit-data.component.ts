@@ -32,6 +32,8 @@ selectedFiles?: FileList;
   progress = 0;
   progress1 = 0;
   message = '';
+  message1 = '';
+ 
 
   fileInfos?: Observable<any>;
 
@@ -150,6 +152,7 @@ selectedFiles?: FileList;
               this.message = err.error.message;
             } else {
               this.message = 'Could not upload the file!';
+              console.log(this.message);
             }
 
             this.currentFile = undefined;
@@ -162,7 +165,7 @@ selectedFiles?: FileList;
   }
 
 
-   uploadQA(): void {
+  uploadQA(): void {
     debugger
     this.progress1 = 0;
 
@@ -177,7 +180,9 @@ selectedFiles?: FileList;
             if (event.type === HttpEventType.UploadProgress) {
               this.progress1 = Math.round(100 * event.loaded / event.total);
             } else if (event instanceof HttpResponse) {
-              this.message = event.body.message;
+              this.message1 = event.body.message;
+              
+              
               // this.fileInfos = this.uploadService.getFiles();
             }
           },
@@ -186,9 +191,9 @@ selectedFiles?: FileList;
             this.progress1 = 0;
 
             if (err.error && err.error.message) {
-              this.message = err.error.message;
+              this.message1 = err.error.message;
             } else {
-              this.message = 'Could not upload the file!';
+              this.message1 = 'Could not upload the file!';
             }
 
             this.currentFile = undefined;
