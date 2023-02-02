@@ -1,0 +1,110 @@
+.que {
+    color: red;
+}
+
+.ans {
+    color: blue;
+}
+
+.keyWordlbl {
+    color: brown;
+}
+
+.keyWord {
+    color: forestgreen;
+}
+
+.complexity {
+    float: right;
+    color: tomato;
+}
+
+.Comlexitylbl {
+    color: brown;
+    
+}
+
+/* .cmpl {
+    float: right;
+} */
+
+.QAcards {
+    margin-top: 15px;
+    
+}
+
+.size{
+    margin: 2%;
+    /* width: 90%; */
+    box-shadow: 0px 0px 10px 0px #aeabab,
+    0 1px 1px 0 #9f9999,
+    0 1px 3px 0 #a8a0a0;
+  }
+
+  .title {
+    margin-left: 117px;
+    color: brown;
+  }
+
+
+  .Complexity{
+    float: right;
+  }
+
+  .ivdt {
+    /* float: right; */
+    width: 50%;
+  }
+
+  .Skill {
+    float: left;
+  }
+
+  .SkillCompl {
+    margin: auto !important;
+  }
+
+  .IDL {
+    float: right;
+    margin-right: 23px;
+  }
+
+  .SkillTitle {
+    float: left;
+    margin-left: 8px;
+    color: brown;
+  }
+  .backBtn{
+    float: right;
+    color: white;
+    margin-top: 14px;
+    background-color: #3452b4;
+    border: none;
+    border-radius: 5px;
+  }
+
+
+
+  .ComplexityTitle {
+    float:right;
+    margin-right: 45px;
+    color: brown;
+  }
+  .CandidateCardSize{
+    margin-left: 120px;
+  }
+  .assessmentCardSize{
+    margin-left: 125px;
+    height: 155px;
+  }
+  .assessMargin{
+    margin-bottom: 12px;
+  }
+
+  .breadcrumb-item :hover {
+    cursor: pointer;
+  }
+  .breadcrumb {
+    margin-bottom: 0px;
+    background-color: #fafafa;
+  }

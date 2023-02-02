@@ -30,7 +30,12 @@ export class InterviewInfoComponent implements OnInit {
   constructor(private http: HttpClient,private dfs:DataFileService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.getCandidates();
+    if (this.dfs.showFiltered == true) {
+      this.filterForClosed();
+    }
+    else {
+      this.getCandidates();
+    }
   }
 
   getCandidates(){
@@ -75,6 +80,23 @@ export class InterviewInfoComponent implements OnInit {
     debugger;
     this.dfs.Intermediate(data);
   }
+
+  sendDataToDFS (info : any) {
+    this.dfs.candiAndIntervInfo(info);
+   
+ }
+
+ filterForClosed () {
+  let status = "closed" ;
+  let name = "";
+  let email = "" ;
+  let startDate = "" ;
+  let endDate = " " ;
+
+  this.searchFilter(status , name , email , startDate , endDate);
+  
+}
+
   reset(){
     this.Searchvalue="";
     this.Searchvalue="";

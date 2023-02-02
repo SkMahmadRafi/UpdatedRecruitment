@@ -1,0 +1,124 @@
+<div class="container-fluid">
+    <div>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/interview-info">Interview-info</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Assessment-info</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div>
+
+            <mat-card class="col-md-3 size ">
+
+                <div>
+                    <label class="title">Candidate Info</label>
+                    <h2>{{canData.canname}}</h2>
+                    <span> Email : <label> {{canData.emailid}}</label></span>
+                    <span class="IDL"> ID : <label>{{canData.canid}}</label></span>
+                    <br>
+                    <span> Ph : <label>{{canData.canphone}}</label></span>
+
+
+
+                </div>
+
+            </mat-card>
+        </div>
+
+        <div>
+            <mat-card class="col-md-4 size ">
+
+                <div>
+                    <label class="title row">Assessment Info</label>
+                    <br>
+                    <div class="col-sm-6 g-0">
+                        <span> Interview ID : <label class="assessMargin"> {{canData.interviewid}}</label></span><br>
+                        <span> Total Questions : <label
+                                class="assessMargin">{{assessmentDetails.TotalQuestions}}</label></span><br>
+                        <span> Total score : <label> {{assessmentDetails.totalscore}} </label></span>
+                    </div>
+                    <div class="col-sm-6 g-0">
+                        <span class="ivdt"> Interview Date : <label class="assessMargin"> {{canData.date|date:
+                                'dd/MM/yyyy'}}</label></span><br>
+                        <span class="ivdt"> Answered questions : <label
+                                class="assessMargin">{{assessmentDetails.answered}}</label></span><br>
+                        <span class="ivdt"> Obtained score : <label>{{assessmentDetails.candidateScore}}</label></span>
+                    </div>
+
+
+                </div>
+
+            </mat-card>
+        </div>
+
+        <div>
+            <mat-card class="col-md-3 size">
+
+                <div>
+
+                    <div class="skills col-md-3">
+                        <div style="margin-left: 10px;">
+                            <label class="SkillTitle"><b>Skill</b></label><br>
+                            <p *ngFor="let skill of canData.skills" style="margin: 0px; float:left ">
+                                {{skill.skillname}} <br> </p>
+                        </div>
+                    </div>
+                    <div class="complexityForInterviewer col-md-9">
+                        <div style="float: right;">
+                            <label class="ComplexityTitle"><b>Complexity</b></label><br>
+                            <p *ngFor="let skill of canData.skills" style="margin: 0px; ">
+                                {{skill.skilllevel}} <br> </p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </mat-card>
+        </div>
+
+    </div>
+
+    <div *ngFor="let item of assessmentInfo ; let i = index">
+
+        <mat-card class="QAcards col-md-8"
+            style="overflow-y:scroll;min-height: 10vh;box-shadow: 2px;border: 3px;border-color: black;">
+            <mat-card-header>
+
+            </mat-card-header>
+            <mat-card-content>
+                <tbody class="table-striped">
+
+                    <tr class="info">
+                        <div class="QA ">
+                            <b>Q </b>
+                            <b class="que">{{i+1}}. {{ item.question}} </b>
+                            <br>
+
+                            <b> Ans : </b>
+                            <span class="ans">{{ item.answer }} </span><br> <br>
+                        </div>
+
+
+                    </tr>
+                </tbody>
+                <div class="row">
+                    <span class="col-md-5 fix"> <b class="keyWordlbl"> key words : </b>{{ item.answerkeywords }}
+                    </span>
+                    <span class="col-md-2 fix"> <b class=" keyWordlbl"> Skill : </b> {{ item.skillname }}</span>
+
+                    <span class="col-md-3 fix"> <b class="Comlexitylbl"> Complexity : </b> {{ item.name }}
+                    </span>
+                    <span class="col-md-2 fix"> <b class="keyWordlbl"> Score : </b> {{ item.score }}</span>
+                </div>
+
+                <span> <b class=" keyWordlbl"> Note : </b> {{ item.note }}</span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <!-- <button  type="button" class = "backBtn"> Back</button> -->
+    <router-outlet></router-outlet>
+</div>

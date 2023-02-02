@@ -19,8 +19,8 @@
       </form>
     </div>
 
-    <mat-stepper [linear]="isLinear" #stepper>
-      <mat-step [stepControl]="firstFormGroup">
+    <mat-stepper [linear]="isLinear" #stepper [linear]="true">
+      <mat-step [stepControl]="firstFormGroup" [completed]="firstFormGroup.valid">
         
         <form [formGroup]="firstFormGroup" class="">
           <ng-template matStepLabel>Basic Info</ng-template>
@@ -79,7 +79,7 @@
           </div>
 
           <div class="basic-info-button">
-            <button mat-button matStepperNext class="green" (click)="showCandidateAssesmentStatus()">
+            <button mat-button matStepperNext class="green" [disabled]="!firstFormGroup.valid" (click)="showCandidateAssesmentStatus()">
               Next
             </button>
             

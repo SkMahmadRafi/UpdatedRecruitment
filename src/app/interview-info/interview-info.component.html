@@ -114,6 +114,7 @@
                         <!-- <label mat-menu-item (click)="sendData(data)" routerLink="/profile-creation">Edit</label> -->
                         <label mat-menu-item routerLink="/profile-creation">Edit</label>
                         <!--   -->
+                        <label *ngIf="data.status == 'closed'" (click) = "sendDataToDFS(data)" mat-menu-item routerLink="/view-assessment"> View </label>
                         <label mat-menu-item  >Delete</label>
                       </mat-menu>
                     </div>

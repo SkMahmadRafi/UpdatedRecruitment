@@ -67,6 +67,7 @@ export class ProfileCreationComponent implements OnInit{
 
   ngOnInit(): void {
     this.EmailforEdit=this._service.arr;
+    this.setValueForProfile();
     this.getSkills();
     this.getComplexity();
     this.form = this.formBuilder.group({
@@ -437,6 +438,24 @@ debugger
       }
 
       this.selectedFiles = undefined;
+    }
+  }
+
+  setValueForProfile () : void {
+    if (this._service.setVal === true) {
+    this.firstFormGroup.controls.email.setValue(this._service.canDetails.email);
+    this.firstFormGroup.controls.experience.setValue(this._service.canDetails.experience);
+    this.firstFormGroup.controls.name.setValue(this._service.canDetails.name);
+    this.firstFormGroup.controls.phone.setValue(this._service.canDetails.phone);
+
+     
+    }
+    else {
+      this.firstFormGroup.controls.email.setValue("");
+    this.firstFormGroup.controls.experience.setValue("");
+    this.firstFormGroup.controls.name.setValue("");
+    this.firstFormGroup.controls.phone.setValue("");
+     
     }
   }
   
