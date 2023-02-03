@@ -24,7 +24,7 @@ const routes: Routes = [
   // {path:'QASection',component:SidebarContentComponent,canActivate:[MaslGuard]},
   {path:'QASection',component:SidebarContentComponent},
   {path:'sign',component:SignInPageComponent,},
-  {path:'Assessment',component:InterviewerScreenComponent},
+  {path:'InterviewInfo',component:InterviewInfoComponent},
 
   {path:'Candidate-Info',component:AssesmentScreenComponent},
   {path:'app',component:AppComponent},
