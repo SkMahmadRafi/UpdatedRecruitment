@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class DataFileService {
 
-  baseUrl='http://localhost:3000/uploadFileManager';
+  baseUrl='http://20.192.1.163:3000/uploadFileManager';
 
   headers = new HttpHeaders({'Authorization':`Bearer ${userIdToken}`});
   arr:any=[];
