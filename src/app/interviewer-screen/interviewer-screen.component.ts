@@ -114,7 +114,7 @@ complexityN:any;
     this.InterviewDate=this.candidate.date;
     debugger
     this.AssDate=this.candidate.date;
-    this.FilterDate = formatDate(this.InterviewDate, 'MM/dd/yyyy', 'en-US');
+    this.FilterDate = formatDate(this.InterviewDate, 'yyyy/MM/dd', 'en-US');
     console.log(this.FilterDate)
 
     this.candidateSkill.forEach((element: { skillid: any;cmpid:any;skillname:any,name:any}) => {
@@ -167,27 +167,26 @@ complexityN:any;
   }
 
   getQuestion(canId:any,RowandQuestion_number:any,assessmentId:any){
-    this.httpClient.post<any>('http://20.192.1.163:3000/assessmentStagingManager',{
-      canId,
-      RowandQuestion_number,
-      assessmentId },
-      {headers:this.headers}).subscribe(
+    
+      this.dfs.getQA(canId,RowandQuestion_number,assessmentId)
+      .subscribe(
       response=>{
         console.log(response);
-        this.newArry=response.result;
-        
+        this.newArry=response.result;    
        });
+      
   }
   keywordload(){
     this.keywordzz=this.newArry[0].Answerkeywords;
-    
   }
  load(){
+  
   this.recruiterData.controls['score']=this.newArry[0].score;
   this.recruiterData.controls['note']=this.newArry[0].Note;
  }
 
   datastoring_response:any='';
+  
   nextQA()
   {
     if(this.newArry.currentRecordId==20){

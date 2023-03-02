@@ -105,12 +105,12 @@
                     </div>
                    
                     <mat-menu #menu="matMenu">
-                      <label mat-menu-item routerLink="/profile"  (click)="sendData2(data.emailid,data.canexperience,data.canname,data.canphone)">Edit</label>
+                      <label mat-menu-item routerLink="/profile"  (click)="sendData2(data.emailid,data.canexperience,data.canname,data.canphone,data.skills)">Edit</label>
                      
                     </mat-menu>
                   </div>
                     <div class="row">
-                      <button  routerLink="/profile"  (click)="sendData2(data.emailid,data.canexperience,data.canname,data.canphone)" [disabled]="data.Candidatestatus =='closed'" class="ScheduleAssesment_button">{{ data.Candidatestatus =='closed' ? 'Completed' : 'Schedule Assesment' }}</button>
+                      <button  routerLink="/profile"  (click)="sendData2(data.emailid,data.canexperience,data.canname,data.canphone, data.skills)" [disabled]="data.Candidatestatus =='closed'" class="ScheduleAssesment_button">{{ data.Candidatestatus =='closed' ? 'Completed' : 'Schedule Assesment' }}</button>
                     </div>
         
                   </div>
@@ -148,7 +148,7 @@
                   </div>  
                 </div>
  
-                  <button  routerLink="/profile"  (click)="sendData2(data.emailid,data.canexperience,data.canname,data.canphone)" [disabled]="data.Candidatestatus =='closed'" class="col-md-3 Assesmentbutton">{{ data.Candidatestatus =='closed' ? 'Completed' : 'Schedule Assesment' }}</button>
+                  <button  routerLink="/profile"  (click)="sendData2(data.emailid,data.canexperience,data.canname,data.canphone, data.skills)" [disabled]="data.Candidatestatus =='closed'" class="col-md-3 Assesmentbutton">{{ data.Candidatestatus =='closed' ? 'Completed' : 'Schedule Assesment' }}</button>
                 
               </mat-card>
               

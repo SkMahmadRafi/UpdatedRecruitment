@@ -85,7 +85,7 @@ export class SidebarContentComponent implements OnInit {
     let Question=this.formname.controls['question'].value;
     let Answer=this.formname.controls['answer'].value;
     let cmpid=this.formname.controls['level'].value;
-    let Answerkeywords=this.formname.controls['answerkeywords'].value;
+    let answerkeywords=this.formname.controls['answerkeywords'].value;
     let queId=this.queId;
     let ansId=this.ansId;
     this.httpClient
@@ -97,8 +97,8 @@ export class SidebarContentComponent implements OnInit {
       });
 
       this.httpClient
-      .post<any>('http://localhost:3000/qaManager/updateA',{
-       Answer,ansId,Answerkeywords
+      .post<any>('http://20.192.1.163:3000/qaManager/updateA',{
+       Answer,ansId,answerkeywords
     },{headers:this.headers})
       .subscribe((response) => {
         
@@ -142,7 +142,7 @@ export class SidebarContentComponent implements OnInit {
     this.ansId = data.ansid;
     this.cmpid = data.cmpid;
     this.answerKeywords = data.answerkeywords;
-   console.log(data.answerkeywords);
+  //  console.log(data.answerkeywords);
    
     this.formname.controls.question.setValue(data.question);
     this.formname.controls.answerkeywords.setValue(data.answerkeywords);

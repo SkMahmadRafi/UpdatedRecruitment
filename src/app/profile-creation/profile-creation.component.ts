@@ -7,6 +7,7 @@ import { FormArray,FormBuilder,FormControl,FormGroup,Validators,} from '@angular
 import { DataFileService } from '../data-file.service';
 import { FormData } from '../form-data'; 
 import { Observable } from 'rxjs';
+import { ThrottlingUtils } from '@azure/msal-common';
 
 @Component({
   selector: 'app-profile-creation',
@@ -66,6 +67,13 @@ export class ProfileCreationComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
+    
+    // this.skillArray=this._service.canDetails.skills;
+    // for(let i=0;i<this.skillArray.length;i++){
+      
+    // }
+
+
     this.EmailforEdit=this._service.arr;
     this.setValueForProfile();
     this.getSkills();
@@ -80,6 +88,7 @@ export class ProfileCreationComponent implements OnInit{
     });
     console.log(this.EmailforEdit)
 
+    this.myData=this.UploadService.Intermediate2;
     
   }
 
@@ -115,6 +124,7 @@ export class ProfileCreationComponent implements OnInit{
   thirdFormGroup = this.formBuilder.group({
     resume: [''],
   });
+
   skillFormGroup = new FormGroup({
     Skills: new FormArray(
       [
@@ -133,6 +143,7 @@ export class ProfileCreationComponent implements OnInit{
   phone: any;
   experience: any;
   SkillA: any = [];
+  // skils:any = [];
 
   storeDatas() {
   debugger
@@ -360,7 +371,9 @@ debugger
   sheduleMessage:any="";
   Mymessage:any="";
 
+ value:any='2023-02-15';
   submit() {
+
     debugger
     console.log(this.form.value);
     this.cArray = this.form.value.selected;
@@ -370,7 +383,8 @@ debugger
     this._service
       // .sendingSchedulingDataToBackend(this.canId, this.newdate, this.cId)
       let canId=this.canId;
-      let date=this.newdate;
+      let date=this.value;
+
       let interviewSkills=this.cId;
       this._http.post(
         'http://20.192.1.163:3000/candidateInterviewManager/addInterview',
@@ -440,14 +454,32 @@ debugger
       this.selectedFiles = undefined;
     }
   }
-
+newskill:boolean=false;
   setValueForProfile () : void {
+   
+    // for(let x of this._service.canDetails.skills){
+    // this.skils = x;
+    // }
+    // console.log(this.skils);
     if (this._service.setVal === true) {
     this.firstFormGroup.controls.email.setValue(this._service.canDetails.email);
     this.firstFormGroup.controls.experience.setValue(this._service.canDetails.experience);
     this.firstFormGroup.controls.name.setValue(this._service.canDetails.name);
     this.firstFormGroup.controls.phone.setValue(this._service.canDetails.phone);
+    //  this.skillFormGroup.controls.Skills.setValue(this._service.canDetails.skills);
+    this.newskill=true;
+    this.skillArray=this._service.canDetails.skills;
+    
+    console.log("--------------")
+//  this.skillFormGroup.controls.FormArray.forEach(element => {
+//   element.setValue()
+//  });
 
+     
+    console.log(this._service.canDetails.skills);
+    
+    console.log("--------------")
+     
      
     }
     else {

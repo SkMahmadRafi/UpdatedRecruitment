@@ -123,9 +123,9 @@ export class AssesmentScreenComponent implements OnInit {
     this.dfs.Intermediate(data);
   }
 
-  sendData2( email : any , experience : any , name:any , phone : any){
+  sendData2( email : any , experience : any , name:any , phone : any, skills:any){
    
-    this.details = { name : name , phone : phone , email : email , experience : experience};
+    this.details = { name : name , phone : phone , email : email , experience : experience, skills: skills };
     this.dfs.Intermediate2(this.details);
     
   }
@@ -147,7 +147,7 @@ export class AssesmentScreenComponent implements OnInit {
       {
         data:{
           value,
-          style:"width:80%, height:80% "
+          style:"width:80%, height:80%"
         }
       });
   }

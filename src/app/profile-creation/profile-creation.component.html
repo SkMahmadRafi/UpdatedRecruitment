@@ -108,12 +108,13 @@
                   <mat-label class="mlevel"> {{ skill.skilllevel }} </mat-label>
     
                   <mat-select formControlName="cmpId" id="cmpid" ngDefaultControl  (ngModelChange)="onSelectSkill($event)">
-                 <mat-option *ngFor="let x of Complexity" value="{{ x.cmpid }}" (change)="onSelectSkill($event)">{{ x.Skilllevel }}</mat-option>
+                 <mat-option *ngFor="let x of Complexity" value="{{ x.cmpid }}" (change)="onSelectSkill($event)">{{ x.skilllevel }}</mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
 
             </ng-container>
+
             <ng-container  *ngFor="let skill of Skills.controls; let i = index" [formGroupName]="i" > 
               <div id="div1" class="leftspace1">
                 <mat-form-field class="width">
@@ -134,6 +135,30 @@
               </div>
               <br />
             </ng-container>
+            <!-- -------------------------------------------------------------------- -->
+
+            <!-- <ng-container  *ngFor="let skill of skillArray; let i = index"  > 
+              <div id="div1" class="leftspace1">
+                <mat-form-field class="width">
+                  <mat-label> Skill </mat-label>
+                  <mat-select formControlName="skillId" id="skillId" ngDefaultControl (ngModelChange)="onSelectSkill($event)" >
+                    <mat-option *ngFor="let x of Skill" value="{{ x.skillid }}" (change)="onSelectSkill($event)" >{{ x.skillname }}</mat-option>        
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              
+              <div id="div2" class="leftspace">
+                <mat-form-field class="width">
+                  <mat-label> Complexity </mat-label>
+                  <mat-select formControlName="cmpId" id="cmpId" ngDefaultControl (ngModelChange)="onSelectSkill($event)">
+                    <mat-option *ngFor="let x of Complexity" value="{{ x.cmpid }}" (change)="onSelectSkill($event)" >{{ x.skilllevel }}</mat-option> 
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <br />
+            </ng-container> -->
+
+            <!-- ---------------------------------------------------------------------------- -->
             <div id="div3" class="spaceL">
               <button (click)="addNew()">Add-Skills</button>
             </div>

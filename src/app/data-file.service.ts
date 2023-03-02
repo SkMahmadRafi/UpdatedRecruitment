@@ -97,6 +97,14 @@ export class DataFileService {
     );
   }
 
+  getQA(canId:any, RowandQuestion_number:any,assessmentId:any){
+    return this._http.post<any>('http://20.192.1.163:3000/assessmentStagingManager',{
+      canId,
+      RowandQuestion_number,
+      assessmentId },
+      {headers:this.headers})
+  }
+
   gettingDataForScheduler(canId: any) {
     return this._http.post(
       'http://20.192.1.163:3000/candidateManager/displayCandidateSkills',
