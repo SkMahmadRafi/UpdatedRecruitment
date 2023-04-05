@@ -416,7 +416,7 @@ debugger
       this.selectedFiles = event.target.files;
     }
 
-    
+
   uploadProfile(): void {
     debugger
     this.progress2 = 0;
