@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
-import{HttpClientTestingModule} from '@angular/common/http/testing';
-import { DataFileService } from './data-file.service';
+import  { TestBed } from '@angular/core/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import  { DataFileService } from './data-file.service';
 
 describe('DataFileService', () => {
   let service: DataFileService;
@@ -8,7 +8,7 @@ describe('DataFileService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(DataFileService);
-    imports:[HttpClientTestingModule]
+    import s:[HttpClientTestingModule]
     provider:[HttpClientTestingModule]
   });
 

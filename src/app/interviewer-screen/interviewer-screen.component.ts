@@ -1,13 +1,13 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, NgModel } from '@angular/forms';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { FormGroup,FormControl } from '@angular/forms';
-import { bindCallback } from 'rxjs';
-import { ElementRef } from '@angular/core';
-import { DataFileService } from '../data-file.service';
-import {formatDate } from '@angular/common';
-import {userIdToken} from '../../app/header/header.component';
+import  { HttpClient, HttpHeaders } from '@angular/common/http';
+import  { Component, OnInit } from '@angular/core';
+import  { FormBuilder, NgModel } from '@angular/forms';
+import  { AngularEditorConfig } from '@kolkov/angular-editor';
+import  { FormGroup,FormControl } from '@angular/forms';
+import  { bindCallback } from 'rxjs';
+import  { ElementRef } from '@angular/core';
+import  { DataFileService } from '../data-file.service';
+import  {formatDate } from '@angular/common';
+import  {userIdToken} from '../../app/header/header.component';
 
 @Component({
   selector: 'app-interviewer-screen',

@@ -1,10 +1,10 @@
-import { formatDate } from '@angular/common';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { DataFileService } from '../data-file.service';
-import { MatDialog ,MatDialogRef} from '@angular/material/dialog';
-import { ScoreComponent } from '../score/score.component';
-import {userIdToken} from '../../app/header/header.component';
+import  { formatDate } from '@angular/common';
+import  { HttpClient, HttpHeaders } from '@angular/common/http';
+import  { Component, OnInit } from '@angular/core';
+import  { DataFileService } from '../data-file.service';
+import  { MatDialog ,MatDialogRef} from '@angular/material/dialog';
+import  { ScoreComponent } from '../score/score.component';
+import  {userIdToken} from '../../app/header/header.component';
 
 @Component({
   selector: 'app-interview-info',

@@ -1,11 +1,11 @@
-import { HttpHeaders } from '@angular/common/http';
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { TooltipPosition } from '@angular/material/tooltip';
-import { MsalService } from '@azure/msal-angular';
-import { AuthenticationResult } from '@azure/msal-browser';
-import {getToken} from '../../app/fetch'
-import { DataFileService } from '../data-file.service';
+import  { HttpHeaders } from '@angular/common/http';
+import  { Component, Inject, OnInit } from '@angular/core';
+import  { FormControl } from '@angular/forms';
+import  { TooltipPosition } from '@angular/material/tooltip';
+import  { MsalService } from '@azure/msal-angular';
+import  { AuthenticationResult } from '@azure/msal-browser';
+import  {getToken} from '../../app/fetch'
+import  { DataFileService } from '../data-file.service';
 
 
 

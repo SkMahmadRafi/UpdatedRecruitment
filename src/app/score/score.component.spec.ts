@@ -1,7 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialogRef } from '@angular/material/dialog';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ScoreComponent } from './score.component';
+import  { ComponentFixture, TestBed } from '@angular/core/testing';
+import  { MatDialogRef } from '@angular/material/dialog';
+import  { HttpClientTestingModule } from '@angular/common/http/testing';
+import  { ScoreComponent } from './score.component';
 
 describe('ScoreComponent', () => {
   let component: ScoreComponent;
@@ -9,7 +9,7 @@ describe('ScoreComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule],
+      import s:[HttpClientTestingModule],
       declarations: [ ScoreComponent ],
       providers:[{
         provide:MatDialogRef,

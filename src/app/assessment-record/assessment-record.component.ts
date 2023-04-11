@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DataFileService } from '../data-file.service';
-import {userIdToken} from '../../app/header/header.component'
+import  { Component, OnInit } from '@angular/core';
+import  { HttpClient, HttpHeaders } from '@angular/common/http';
+import  { DataFileService } from '../data-file.service';
+import  {userIdToken} from '../../app/header/header.component'
 
 @Component({
   selector: 'app-assessment-record',

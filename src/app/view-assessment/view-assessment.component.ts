@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DataFileService } from '../data-file.service';
+import  { HttpClient } from '@angular/common/http';
+import  { Component, OnDestroy, OnInit } from '@angular/core';
+import  { DataFileService } from '../data-file.service';
 
 @Component({
   selector: 'app-view-assessment',

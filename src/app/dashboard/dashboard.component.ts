@@ -1,6 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import {userIdToken} from '../../app/header/header.component';
-import { DataFileService } from '../data-file.service';
+import  { Component, Inject, OnInit } from '@angular/core';
+import  {userIdToken} from '../../app/header/header.component';
+import  { DataFileService } from '../data-file.service';
 
 @Component({
   selector: 'app-dashboard',

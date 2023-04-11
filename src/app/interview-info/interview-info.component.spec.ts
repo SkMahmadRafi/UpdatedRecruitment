@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import{HttpClientTestingModule} from '@angular/common/http/testing';
-import { InterviewInfoComponent } from './interview-info.component';
+import  { ComponentFixture, TestBed } from '@angular/core/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import  { InterviewInfoComponent } from './interview-info.component';
 
 
 describe('InterviewInfoComponent', () => {
@@ -9,7 +9,7 @@ describe('InterviewInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule],
+      import s:[HttpClientTestingModule],
       declarations: [ InterviewInfoComponent ],
 
     })

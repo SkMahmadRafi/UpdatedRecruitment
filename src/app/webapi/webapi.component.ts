@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { protectedResources } from '../auth-config';
+import  { Component, OnInit } from '@angular/core';
+import  { HttpClient } from '@angular/common/http';
+import  { protectedResources } from '../auth-config';
 
 type ProfileType = {
   name?: string

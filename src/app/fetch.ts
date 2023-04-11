@@ -1,5 +1,5 @@
-import { MsalService } from '@azure/msal-angular'
-import {msal} from '../app/header/header.component'
+import  { MsalService } from '@azure/msal-angular'
+import  {msal} from '../app/header/header.component'
 
 
 export const getToken = async(scopes:any) =>{

@@ -1,10 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder, FormControl } from '@angular/forms';
-import { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
-import {userIdToken} from '../../app/header/header.component';
-import { Observable } from 'rxjs';
-import { DataFileService } from '../data-file.service';
+import  { Component, Inject, OnInit } from '@angular/core';
+import  { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import  { FormBuilder, FormControl } from '@angular/forms';
+import  { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
+import  {userIdToken} from '../../app/header/header.component';
+import  { Observable } from 'rxjs';
+import  { DataFileService } from '../data-file.service';
 
 @Component({
   selector: 'app-edit-data',

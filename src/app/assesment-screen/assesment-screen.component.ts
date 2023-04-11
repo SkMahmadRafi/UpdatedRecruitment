@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
-import{FormBuilder} from '@angular/forms';
-import { DataFileService } from '../data-file.service';
-import { Pipe,PipeTransform } from '@angular/core';
-import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
-import { EditDataComponent } from '../edit-data/edit-data.component';
-import { ScoreComponent } from '../score/score.component';
-import {userIdToken} from '../../app/header/header.component';
+import  { Component, OnInit } from '@angular/core';
+import  { HttpClient, HttpHeaders } from '@angular/common/http';
+import  { Router } from '@angular/router';
+import {FormBuilder} from '@angular/forms';
+import  { DataFileService } from '../data-file.service';
+import  { Pipe,PipeTransform } from '@angular/core';
+import  {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
+import  { EditDataComponent } from '../edit-data/edit-data.component';
+import  { ScoreComponent } from '../score/score.component';
+import  {userIdToken} from '../../app/header/header.component';
 
-import { style } from '@angular/animations';
-// import { baseColors, Label } from 'ng2-charts';
+import  { style } from '@angular/animations';
+// import  { baseColors, Label } from 'ng2-charts';
 
 
 

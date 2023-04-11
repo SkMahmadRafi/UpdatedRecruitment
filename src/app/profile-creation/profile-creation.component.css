@@ -30,7 +30,7 @@ mat-card{
  .redirect_icon{
    margin-left: 72%;
  }
- #div1,#div2,#div3{
+ #div 1,#div 2,#div 3{
    display: inline;
 }
 
@@ -65,7 +65,7 @@ mat-card{
 .text-box-Size{
    min-height: 80px;
 }
-.divu2{
+.div u2{
    display: inline;
 
 }
@@ -155,9 +155,9 @@ button{
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .shadow {
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!import ant;
 }
-#div1,#div2{
+#div 1,#div 2{
    display: inline;
 }
 .fa, .fas {
@@ -174,14 +174,14 @@ button{
     line-height: 1;
 }
 .mb-0, .my-0 {
-    margin-bottom: 0!important;
+    margin-bottom: 0!import ant;
 }
 
 .font-weight-bold {
-    font-weight: 700!important;
+    font-weight: 700!import ant;
 }
 .mt-4, .my-4 {
-    margin-top: 1.5rem!important;
+    margin-top: 1.5rem!import ant;
 }
 /* .mb-0{
     font-weight: bold;
@@ -231,7 +231,7 @@ button{
   .buttonCheck{
    /* margin-left: 10px; */
   }
-  /* #div1,#div2{
+  /* #div 1,#div 2{
    display: inline;
   } */
   .iconE{
@@ -331,14 +331,14 @@ button{
    
  }
  .col-input:checked{
-   background-color: rgb(20, 46, 192) !important;
+   background-color: rgb(20, 46, 192) !import ant;
    border: 0;
 }
 .col-input:focus, .label::after, label.form-check-label:focus, .form-check-input::after, .form-check-input:not(:disabled):not(.disabled):active:focus {
    color: black;
    outline: 0;
    border: 0;
-   box-shadow: 0 0 0 0.1rem green !important;
+   box-shadow: 0 0 0 0.1rem green !import ant;
 }
 .nextback{
    align-items: flex-end;

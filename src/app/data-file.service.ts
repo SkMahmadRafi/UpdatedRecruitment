@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common/http';
-import { ProfileCreationComponent } from './profile-creation/profile-creation.component';
+import  { Injectable } from '@angular/core';
+import  { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common/http';
+import  { ProfileCreationComponent } from './profile-creation/profile-creation.component';
 
-import {userIdToken} from '../app/header/header.component';
-import { Observable } from 'rxjs';
+import  {userIdToken} from '../app/header/header.component';
+import  { Observable } from 'rxjs';
 
 
 @Injectable({

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import{HttpClientTestingModule} from '@angular/common/http/testing';
-import { WebapiComponent } from './webapi.component';
+import  { ComponentFixture, TestBed } from '@angular/core/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import  { WebapiComponent } from './webapi.component';
 
 describe('WebapiComponent', () => {
   let component: WebapiComponent;
@@ -8,7 +8,7 @@ describe('WebapiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule],
+      import s:[HttpClientTestingModule],
       declarations: [ WebapiComponent ]
     })
     .compileComponents();

@@ -2,7 +2,7 @@
 <mat-toolbar color="primary">
     <a class="title" href="/">{{ title }}</a>
   
-    <div class="toolbar-spacer"></div>
+    <div  class="toolbar-spacer"></div >
   
     <a mat-button [routerLink]="['Candidate-Info']">Candidates</a>
     <a mat-button [routerLink]="['webapi']">Web API</a>
@@ -11,10 +11,10 @@
     <button mat-raised-button *ngIf="loginDisplay" (click)="logout()">Logout</button>
   
   </mat-toolbar>
-  <div class="container">
+  <div  class="container">
     <app-header></app-header>
     <router-outlet></router-outlet>
-  </div>
+  </div >
 
    -->
    <app-header></app-header>

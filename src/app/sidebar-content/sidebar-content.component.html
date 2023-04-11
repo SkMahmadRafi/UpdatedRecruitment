@@ -2,45 +2,45 @@
   <!------------------ third and new-------------------- -->
 
   <form [formGroup]="recruiterData" class="">
-    <div class="container-fluid">
-      <div>
+    <div  class="container-fluid">
+      <div >
         <mat-card>
        
         <label>Choose Skill and Complexity to View Questions</label> <br>
-        <div id="div3" class="spaceL">
+        <div  id="div 3" class="spaceL">
           <mat-form-field >
           <mat-label> Skill </mat-label>
           <mat-select formControlName="skillId" ngDefaultControl (ngModelChange)="onSelectSkill($event)" >
            <mat-option *ngFor="let x of Skill" value="{{x.skillid}}"(change)="onSelectSkill($event)"  >{{x.skillname}}</mat-option>
           </mat-select>
           </mat-form-field>
-        </div>
-        <div id="div2" class="spaceL">
+        </div >
+        <div  id="div 2" class="spaceL">
           <mat-form-field >
             <mat-label> Complexity </mat-label>
             <mat-select formControlName="level" ngDefaultControl (ngModelChange)="onSelectComple($event)">
             <mat-option *ngFor="let x of Complexity" value="{{x.cmpid}}">{{x.name}}</mat-option>
           </mat-select>
           </mat-form-field>
-        </div>
+        </div >
 
-        <div id="div3" class="spaceL">
+        <div  id="div 3" class="spaceL">
           <button routerLink="/addqa">Add Question</button>
-        </div>
-        <div id="div3" class="spaceL">
+        </div >
+        <div  id="div 3" class="spaceL">
           <button routerLink="/addqa">Add New Skill</button>
-        </div>
+        </div >
       </mat-card>
-      </div>
-      <div>
-        <div class="size"  *ngFor="let item of arr  | paginate: { itemsPerPage: 5, currentPage: p   } ;let i=index">
+      </div >
+      <div >
+        <div  class="size"  *ngFor="let item of arr  | paginate: { itemsPerPage: 5, currentPage: p   } ;let i=index">
          
             <mat-card style="overflow-y:scroll;min-height: 20vh;box-shadow: 2px;border: 3px;border-color: black;" >
               <mat-card-header class="fixed">
-                <div class="float">
+                <div  class="float">
                   <mat-icon  (click)="hideAnswer()">keyboard_arrow_down</mat-icon>
                   <mat-icon data-bs-toggle="modal"   data-bs-target="#Edit" (click)="edit(item)" >edit</mat-icon>
-                </div>
+                </div >
             
           </mat-card-header>
           <mat-card-content >
@@ -70,24 +70,24 @@
           </mat-card>
           <br>
           
-        </div>
+        </div >
         <pagination-controls (pageChange)="p= $event"></pagination-controls>
-      </div>
+      </div >
       
       <br />
-    </div>
+    </div >
   </form>
 
-  <!-- <div class="modal fade" id="EditPop" tabindex="-1" aria-labelledby="exampleModalLabel"
+  <!-- <div  class="modal fade" id="EditPop" tabindex="-1" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
+              <div  class="modal-dialog">
+                <div  class="modal-content">
+                  <div  class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Edit Question and Answer</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="row">
+                  </div >
+                  <div  class="modal-body">
+                    <div  class="row">
                       <form [formGroup]="formname">
                         <label class="que"> question : {{item.question}} </label>
                         <label class="ans"> answer :{{item.answer}}</label>
@@ -102,22 +102,22 @@
                         <button class="btn btn-primary srchBtn" data-bs-dismiss="modal" aria-label="Close" 
                         (click)="editListDtlDB ()" [disabled]="!myFormGroup.valid" >Update</button>
                       </form>
-                    </div>
-                  </div>
+                    </div >
+                  </div >
              
-                </div>
-              </div>
-            </div> -->
+                </div >
+              </div >
+            </div > -->
 
 
-            <div class="modal" [ngClass]="{'show' : popup }" tabindex="-1" id="edit">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
+            <div  class="modal" [ngClass]="{'show' : popup }" tabindex="-1" id="edit">
+              <div  class="modal-dialog">
+                <div  class="modal-content">
+                  <div  class="modal-header">
                     <b class="modal-title">Edit Question and Answer</b>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
+                  </div >
+                  <div  class="modal-body">
                     <form [formGroup]="formname">
                      
                         
@@ -131,14 +131,14 @@
                           <textarea matInput  formControlName="answer"></textarea>
                           </mat-form-field><br> 
     
-                          <div id="div2" class="cmp">
+                          <div  id="div 2" class="cmp">
                             <mat-form-field >
                               <mat-label> Complexity </mat-label>
                               <mat-select formControlName="level" ngDefaultControl >
                               <mat-option *ngFor="let x of Complexity" value="{{x.cmpid}}">{{x.name}}</mat-option>
                             </mat-select>
                             </mat-form-field>
-                          </div>
+                          </div >
     
                           <mat-form-field class="input">
                             <mat-label> Answerkeywords </mat-label>
@@ -148,11 +148,11 @@
                            
     
                     </form>
-                  </div>
-                  <div class="modal-footer">
+                  </div >
+                  <div  class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="popup=false">Close</button>
                     <button type="button" class="btn btn-primary" (click)="savechange()">Save changes</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </div >
+                </div >
+              </div >
+            </div >

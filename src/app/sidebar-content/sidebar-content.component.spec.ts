@@ -1,7 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { SidebarContentComponent } from './sidebar-content.component';
+import  { ComponentFixture, TestBed } from '@angular/core/testing';
+import  { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import  { HttpClientTestingModule } from '@angular/common/http/testing';
+import  { SidebarContentComponent } from './sidebar-content.component';
 
 describe('SidebarContentComponent', () => {
   let component: SidebarContentComponent;
@@ -9,7 +9,7 @@ describe('SidebarContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule,FormsModule,ReactiveFormsModule],
+      import s:[HttpClientTestingModule,FormsModule,ReactiveFormsModule],
       declarations: [ SidebarContentComponent ]
     })
     .compileComponents();

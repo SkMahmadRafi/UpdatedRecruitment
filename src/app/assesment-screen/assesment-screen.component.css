@@ -40,8 +40,8 @@ mat-form-field{
     
   .new_candidate_btn{
     background-color: green;
-    margin: none !important;   
-    padding: none !important;
+    margin: none !import ant;   
+    padding: none !import ant;
     width:110px;
     float: right;
     margin-right: 2%;
@@ -62,7 +62,7 @@ mat-form-field{
    
   }
   
-  #div1,#div2,#div3,#div4{
+  #div 1,#div 2,#div 3,#div 4{
     display: inline;
   }
   .search_button{
@@ -104,7 +104,7 @@ button:disabled {
   height: 45px;
   }
   label{
-    margin-bottom: 1% !important;
+    margin-bottom: 1% !import ant;
   }
   
 .cards{

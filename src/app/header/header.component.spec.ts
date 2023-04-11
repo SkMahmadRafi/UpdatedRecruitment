@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MsalService } from '@azure/msal-angular';
-import { HeaderComponent } from './header.component';
+import  { ComponentFixture, TestBed } from '@angular/core/testing';
+import  { MsalService } from '@azure/msal-angular';
+import  { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;

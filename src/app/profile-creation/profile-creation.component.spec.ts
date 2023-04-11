@@ -1,7 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import{HttpClientTestingModule} from '@angular/common/http/testing';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { ProfileCreationComponent } from './profile-creation.component';
+import  { ComponentFixture, TestBed } from '@angular/core/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import  { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import  { ProfileCreationComponent } from './profile-creation.component';
 
 describe('ProfileCreationComponent', () => {
   let component: ProfileCreationComponent;
@@ -9,7 +9,7 @@ describe('ProfileCreationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule,FormsModule,ReactiveFormsModule],
+      import s:[HttpClientTestingModule,FormsModule,ReactiveFormsModule],
       declarations: [ ProfileCreationComponent ]
     })
     .compileComponents();

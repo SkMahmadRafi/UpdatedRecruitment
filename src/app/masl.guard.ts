@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
-import { MsalService } from '@azure/msal-angular';
+import  { Injectable } from '@angular/core';
+import  { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import  { Observable } from 'rxjs';
+import  { MsalService } from '@azure/msal-angular';
 
 @Injectable({
   providedIn: 'root'

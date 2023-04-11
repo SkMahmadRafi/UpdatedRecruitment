@@ -56,8 +56,8 @@ mat-sidenav{
       } */
     .new_candidate_btn{
       background-color: green;
-      margin: none !important;   
-      padding: none !important;
+      margin: none !import ant;   
+      padding: none !import ant;
       width:110px;
       float: right;
       margin-right: 2%;
@@ -79,10 +79,10 @@ mat-sidenav{
     }
     /* .searchbar{
       margin: none ;
-      padding: none !important;
+      padding: none !import ant;
       margin-left: 1%;
     } */
-    #div1,#div2,#div3{
+    #div 1,#div 2,#div 3{
       display: inline;
     }
     .search_button{

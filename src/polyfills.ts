@@ -2,9 +2,9 @@
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
  *
- * This file is divided into 2 sections:
+ * This file is div ided into 2 sections:
  *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
+ *   2. Application import s. Files import ed after ZoneJS that should be loaded before your main
  *      file.
  *
  * The current setup is for so-called "evergreen" browsers; the last versions of browsers that
@@ -22,10 +22,10 @@
  * By default, zone.js will patch all possible macroTask and DomEvents
  * user can disable parts of macroTask/DomEvents patch by setting following flags
  * because those flags need to be set before `zone.js` being loaded, and webpack
- * will put import in the top of bundle, so user need to create a separate file
+ * will put import  in the top of bundle, so user need to create a separate file
  * in this directory (for example: zone-flags.ts), and put the following flags
- * into that file, and then add the following code before importing zone.js.
- * import './zone-flags';
+ * into that file, and then add the following code before import ing zone.js.
+ * import  './zone-flags';
  *
  * The flags allowed in zone-flags.ts are listed here.
  *
@@ -45,9 +45,9 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js';  // Included with Angular CLI.
+import  'zone.js';  // Included with Angular CLI.
 
 
 /***************************************************************************************************
- * APPLICATION IMPORTS
+ * APPLICATION import S
  */

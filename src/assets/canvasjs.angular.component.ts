@@ -10,7 +10,7 @@ https://canvasjs.com/license/
 /*tslint:disable*/
 /*eslint-disable*/
 /*jshint ignore:start*/
-import {
+import  {
     Component,
     AfterViewInit,
     OnChanges,
@@ -24,7 +24,7 @@ import {
   
   @Component({
     selector: 'canvasjs-chart',
-    template: '<div id="{{chartContainerId}}"></div>',
+    template: '<div  id="{{chartContainerId}}"></div >',
   })
   class CanvasJSChart implements AfterViewInit, OnChanges, OnDestroy {
     static _cjsChartContainerId = 0;

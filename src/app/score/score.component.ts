@@ -1,12 +1,12 @@
-import { ExpressionType } from '@angular/compiler';
-import { Component, OnInit,Inject } from '@angular/core';
-import { dialogClose } from '@syncfusion/ej2-angular-richtexteditor';
-import { MatDialogRef } from '@angular/material/dialog';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DataFileService } from '../data-file.service';
-import {userIdToken} from '../../app/header/header.component';
-import { formatDate } from '@angular/common';
+import  { ExpressionType } from '@angular/compiler';
+import  { Component, OnInit,Inject } from '@angular/core';
+import  { dialogClose } from '@syncfusion/ej2-angular-richtexteditor';
+import  { MatDialogRef } from '@angular/material/dialog';
+import  { HttpClient, HttpHeaders } from '@angular/common/http';
+import  {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import  { DataFileService } from '../data-file.service';
+import  {userIdToken} from '../../app/header/header.component';
+import  { formatDate } from '@angular/common';
 
 
 @Component({

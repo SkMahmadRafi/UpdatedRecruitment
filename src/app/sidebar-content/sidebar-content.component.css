@@ -36,7 +36,7 @@ label{
   margin-right: 1%;
  
 }
-#div1,#div2,#div3,#div4{
+#div 1,#div 2,#div 3,#div 4{
  display: inline;
 }
 .spaceL{
@@ -70,7 +70,7 @@ form{
    background-attachment: fixed;
    height: 100%;
  }
- div.b {
+ div .b {
   text-align: left;
  
 }
@@ -96,17 +96,17 @@ form{
  
   cursor: s-resize;
 }
-#div1,#div2{
+#div 1,#div 2{
   display: inline;
 }
 .float{
-  float: end !important;
+  float: end !import ant;
   margin-left: 89%;
   position: fixed;
 }
 
 .float{
-  float: end !important;
+  float: end !import ant;
   margin-left: 90%;
 }
 .input{
@@ -176,7 +176,7 @@ label{
   margin-right: 1%;
  
 }
-#div1,#div2,#div3,#div4{
+#div 1,#div 2,#div 3,#div 4{
  display: inline;
 }
 .spaceL{
@@ -209,7 +209,7 @@ form{
    background-attachment: fixed;
    height: 100%;
  }
- div.b {
+ div .b {
   text-align: left;
   
 }
@@ -235,11 +235,11 @@ form{
  
   cursor: s-resize;
 }
-#div1,#div2{
+#div 1,#div 2{
   display: inline;
 }
 .float{
-  float: end !important;
+  float: end !import ant;
   margin-left: 90%;
 }
 

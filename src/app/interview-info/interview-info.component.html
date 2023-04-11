@@ -30,7 +30,7 @@
 
           <mat-form-field class="full-width" appearance="fill">
             <mat-label>From date</mat-label>
-            <input matInput [matDatepicker]="picker" [(ngModel)]="start_date" id="div1">
+            <input matInput [matDatepicker]="picker" [(ngModel)]="start_date" id="div 1">
             <mat-datepicker-toggle matIconSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
@@ -63,26 +63,26 @@
       </mat-sidenav>
       <mat-sidenav-content>
 
-        <div>
+        <div >
           <mat-card class="col-md-12 header">
-            <div id="div1">
+            <div  id="div 1">
               <label class="label">InterviewInfo</label>
-            </div>
+            </div >
            
-            <mat-icon class="filter" id="div2" (click)="sidenavright.toggle();">filter_alt</mat-icon>
-            <div id="div2">
+            <mat-icon class="filter" id="div 2" (click)="sidenavright.toggle();">filter_alt</mat-icon>
+            <div  id="div 2">
               <button class="new_candidate_btn" routerLink="/Candidate-Info">CandidateInfo</button>
-            </div>
-            <!-- <div id="div3">
+            </div >
+            <!-- <div  id="div 3">
               <button class="new_candidate_btn" routerLink="/profile-creation">New Candidate</button>
-            </div> -->
+            </div > -->
           </mat-card>
-            <div class="row">
-              <div *ngFor="let data of assignCandidates" class="col-md-4" >
+            <div  class="row">
+              <div  *ngFor="let data of assignCandidates" class="col-md-4" >
                 <!-- |filter:Searchvalue:Searchdata|filter:Searchvalue1:Searchdata1; -->
                 <mat-card class="col-md-12 size zoom">
                   
-                  <div class="col-md-6">
+                  <div  class="col-md-6">
                     <h2>{{data.canname}}</h2>
                     <p>{{data.Emailid}}</p>
                     <p>{{data.canphone}}</p>
@@ -90,25 +90,25 @@
                     <!-- <p matTooltip="Assesment Date">{{data.Date|date:"dd/MM/yy"}}</p> -->
                     <!--  -->
                     
-                  </div>
-                  <div class="col-md-6">
-                    <div class="row">
+                  </div >
+                  <div  class="col-md-6">
+                    <div  class="row">
                     <button  class="dialogButton"  (click)="openDialogScore(data)" [hidden]="data.status =='Open'">Score</button>
         
                     <!-- <button  class="dialogButton"  routerLink="/barchart" [hidden]="data.Candidatestatus =='Open'">Score</button> -->
                    
-                    <mat-icon class="threeDots" id="div2" [matMenuTriggerFor]="menu">more_vert</mat-icon>
+                    <mat-icon class="threeDots" id="div 2" [matMenuTriggerFor]="menu">more_vert</mat-icon>
         
-                    <div  class="dropdown skills" id="div1">
+                    <div   class="dropdown skills" id="div 1">
                       <h2 class="dropbtn">Skills</h2>
-                      <div class="dropdown-content">  
+                      <div  class="dropdown-content">  
                       <!-- <a href="#">Candidate</a> -->
                         <mat-card *ngFor="let sk of data.skills" >
-                          <label id="div1" class="gap">{{sk.skillname}}</label>
-                          <label id="div2" class="rightF">{{sk.skilllevel}}</label>
+                          <label id="div 1" class="gap">{{sk.skillname}}</label>
+                          <label id="div 2" class="rightF">{{sk.skilllevel}}</label>
                         </mat-card>
-                      </div>  
-                    </div>
+                      </div >  
+                    </div >
                    
                     <mat-menu #menu="matMenu">
                       <!-- <label mat-menu-item (click)="sendData(data)" routerLink="/profile-creation">Edit</label> -->
@@ -117,16 +117,16 @@
                       <label *ngIf="data.status == 'closed'" (click) = "sendDataToDFS(data)" mat-menu-item routerLink="/view-assessment"> View </label>
                       <label mat-menu-item  >Delete</label>
                     </mat-menu>
-                  </div>
-                    <div class="row">
+                  </div >
+                    <div  class="row">
                       <button (click)="sendData(data)" routerLink="/assessment" [disabled]="data.status =='closed'" class="startAssessment_button">{{ data.status =='open' ? 'Start-Assessment' : 'completed' }}</button>
-                    </div>
+                    </div >
         
-                  </div>
+                  </div >
                 </mat-card>
-              </div>
-            </div>
-         </div>
+              </div >
+            </div >
+         </div >
        </mat-sidenav-content>
     </mat-sidenav-container>
   

@@ -1,7 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import{HttpClientTestingModule} from '@angular/common/http/testing';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { InterviewerScreenComponent } from './interviewer-screen.component';
+import  { ComponentFixture, TestBed } from '@angular/core/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import  { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import  { InterviewerScreenComponent } from './interviewer-screen.component';
 
 describe('InterviewerScreenComponent', () => {
   let component: InterviewerScreenComponent;
@@ -9,7 +9,7 @@ describe('InterviewerScreenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule,FormsModule,ReactiveFormsModule],
+      import s:[HttpClientTestingModule,FormsModule,ReactiveFormsModule],
       declarations: [ InterviewerScreenComponent ]
     })
     .compileComponents();
