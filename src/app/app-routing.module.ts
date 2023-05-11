@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { MaslGuard } from './masl.guard';
 import { AssesmentScreenComponent } from './assesment-screen/assesment-screen.component';
 import { ViewAssessmentComponent } from './view-assessment/view-assessment.component';
+import { UploadformComponent } from './uploadform/uploadform.component';
 
 const routes: Routes = [
    {path:'',component:DashboardComponent,},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'addqa',component:EditDataComponent},
   {path:'interview-info',component:InterviewInfoComponent},
   {path:'view-assessment',component:ViewAssessmentComponent},
+  {path : 'uploadform',component:UploadformComponent},
   // {path:'**',component:DashboardComponent},
   
   

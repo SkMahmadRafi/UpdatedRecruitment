@@ -30,7 +30,7 @@ mat-card{
  .redirect_icon{
    margin-left: 72%;
  }
- #div 1,#div 2,#div 3{
+ #div1,#div2,#div3{
    display: inline;
 }
 
@@ -155,9 +155,9 @@ button{
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .shadow {
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!import ant;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
-#div 1,#div 2{
+#div1,#div2{
    display: inline;
 }
 .fa, .fas {
@@ -174,14 +174,14 @@ button{
     line-height: 1;
 }
 .mb-0, .my-0 {
-    margin-bottom: 0!import ant;
+    margin-bottom: 0!important;
 }
 
 .font-weight-bold {
-    font-weight: 700!import ant;
+    font-weight: 700!important;
 }
 .mt-4, .my-4 {
-    margin-top: 1.5rem!import ant;
+    margin-top: 1.5rem!important;
 }
 /* .mb-0{
     font-weight: bold;
@@ -228,10 +228,10 @@ button{
     color: rgb(19, 158, 19);
     font-size: medium;
   } */
-  .buttonCheck{
+  /* .buttonCheck{ */
    /* margin-left: 10px; */
-  }
-  /* #div 1,#div 2{
+  /* } */
+  /* #div1,#div2{
    display: inline;
   } */
   .iconE{
@@ -331,14 +331,14 @@ button{
    
  }
  .col-input:checked{
-   background-color: rgb(20, 46, 192) !import ant;
+   background-color: rgb(20, 46, 192) !important;
    border: 0;
 }
 .col-input:focus, .label::after, label.form-check-label:focus, .form-check-input::after, .form-check-input:not(:disabled):not(.disabled):active:focus {
    color: black;
    outline: 0;
    border: 0;
-   box-shadow: 0 0 0 0.1rem green !import ant;
+   box-shadow: 0 0 0 0.1rem green !important;
 }
 .nextback{
    align-items: flex-end;
@@ -356,6 +356,10 @@ button{
    display: inline-block;
 }
 
+/* .adjustable{ */
+   /* width: 50%; */
+   /* margin: 0 auto; */
+/* } */
 /* .padding{
    padding-top: 1%;
    padding-left: 3%;
@@ -398,9 +402,6 @@ button{
   border: none;
 }
 
-.adjustable{
-   width: 50%;
-}
 .form-container{
    margin: 100px;
 }

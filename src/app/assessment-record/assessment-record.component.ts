@@ -18,7 +18,7 @@ export class AssessmentRecordComponent implements OnInit {
   val:any = [];
   
     getinfo(emailId:any){
-      this.httpClient.post<any>('http://localhost:3000/candidateManager/candidateSkill',
+      this.httpClient.post<any>('http://localhost:5000/candidateManager/candidateSkill',
       {emailId},{headers:this.headers}
     ).subscribe(
     response=>{

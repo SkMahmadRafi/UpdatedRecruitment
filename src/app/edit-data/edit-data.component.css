@@ -15,7 +15,7 @@
 
 
 
-#div 1,#div 2{
+#div1,#div2{
     display: inline;
 }
 .leftspace{
@@ -41,7 +41,7 @@ mat-card{
     0 2px 2px 0 #302f2f,
     0 2px 4px 0 #a8a0a0;
 }
-.div 1{
+.div1{
     margin-left: 6%;
 }
 .response{
@@ -90,7 +90,7 @@ h2{
 
 
 
-#div 1,#div 2{
+#div1,#div2{
   display: inline;
 }
 
@@ -124,7 +124,7 @@ mat-card{
   0 2px 2px 0 #302f2f,
   0 2px 4px 0 #a8a0a0;
 }
-.div 1{
+.div1{
   margin-left: 6%;
 }
 .response{

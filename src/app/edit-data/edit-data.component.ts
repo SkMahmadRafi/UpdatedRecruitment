@@ -1,10 +1,10 @@
-import  { Component, Inject, OnInit } from '@angular/core';
-import  { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import  { FormBuilder, FormControl } from '@angular/forms';
-import  { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
-import  {userIdToken} from '../../app/header/header.component';
-import  { Observable } from 'rxjs';
-import  { DataFileService } from '../data-file.service';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormBuilder, FormControl } from '@angular/forms';
+import { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { userIdToken } from '../../app/header/header.component';
+import { Observable } from 'rxjs';
+import { DataFileService } from '../data-file.service';
 
 @Component({
   selector: 'app-edit-data',
@@ -13,35 +13,35 @@ import  { DataFileService } from '../data-file.service';
 })
 export class EditDataComponent implements OnInit {
 
-  headers = new HttpHeaders({'Authorization':`Bearer ${userIdToken}`});
-skill:any;
-SkillId:any;
-// complexity:any;
-ComplexityId:any;
-Question:any;
-answer:any;
-Keyword:any;
-Skills: any = [];
-Complexity: any = [];
-QAresponse:any;
-Skillresponse:any;
-Skillresponse1:any;
+  headers = new HttpHeaders({ 'Authorization': `Bearer ${userIdToken}` });
+  skill: any;
+  SkillId: any;
+  // complexity:any;
+  ComplexityId: any;
+  Question: any;
+  answer: any;
+  Keyword: any;
+  Skills: any = [];
+  Complexity: any = [];
+  QAresponse: any;
+  Skillresponse: any;
+  Skillresponse1: any;
 
-selectedFiles?: FileList;
+  selectedFiles?: FileList;
   currentFile?: File;
   progress = 0;
   progress1 = 0;
   message = '';
   message1 = '';
- 
+
 
   fileInfos?: Observable<any>;
 
-  constructor(private formBuilder:FormBuilder,private http:HttpClient,private uploadService:DataFileService) {
-   
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private uploadService: DataFileService) {
+
 
   }
- 
+
   ngOnInit(): void {
     debugger
     this.getSkills();
@@ -49,11 +49,11 @@ selectedFiles?: FileList;
     // this.fileInfos = this.uploadService.getFiles();
   }
 
- 
+
 
   getComplexity() {
     this.http
-    .get<any>('http://20.192.1.163:3000/ComplexityManager',{headers:this.headers})
+      .get<any>('http://10.10.20.44:5000/ComplexityManager', { headers: this.headers })
       .subscribe((response) => {
         this.Complexity = response.result;
         console.log(this.Complexity);
@@ -62,66 +62,73 @@ selectedFiles?: FileList;
 
   getSkills() {
     this.http
-    .get<any>('http://20.192.1.163:3000/skillsManager',{headers:this.headers})
+      .get<any>('http://10.10.20.44:5000/skillsManager', { headers: this.headers })
       .subscribe((response) => {
         this.Skills = response.result;
         // console.log(this.Skill);
       });
   }
 
-  getSelectedSkill(value:any){
+  getSelectedSkill(value: any) {
     debugger
-    this.SkillId=value;
+    this.SkillId = value;
   }
-  getSelectedComplexity(value:any){
+  getSelectedComplexity(value: any) {
     debugger
-    this.ComplexityId=value;
+    this.ComplexityId = value;
   }
 
 
-  addSkill(skillName:any){
-      this.Skillresponse='';
-      this.Skillresponse1='';
+  addSkill(skillName: any) {
+    this.Skillresponse = '';
+    this.Skillresponse1 = '';
     debugger
-  try{
-   
-    this.http.post<any>('http://20.192.1.163:3000/skillsManager/addSkill',
-    {skillName},{headers:this.headers}).subscribe((response) => {
-      //  this.Skillresponse = response.Message;
-      
-       if(response.Message=='The skill is already present!!')
-       {
-        this.Skillresponse1 = response.Message;
-       }else{
-        this.Skillresponse=response.Message;
-       }
-       console.log(response)   
-    });
-  }catch{
-      this.Skillresponse="Error adding Skill"
-  }
-  }
-  
-  addComplexity(value:any){
-    
+    try {
+
+      this.http.post<any>('http://10.10.20.44:5000/skillsManager/addSkill',
+        { skillName }, { headers: this.headers }).subscribe((response) => {
+          //  this.Skillresponse = response.Message;
+
+          if (response.Message == 'The skill is already present!!') {
+            this.Skillresponse1 = response.Message;
+          } else {
+            this.Skillresponse = response.Message;
+          }
+          console.log(response)
+        });
+    } catch {
+      this.Skillresponse = "Error adding Skill"
+    }
   }
 
-  addQuestion(skillId:any,cmpId:any,Question:any,Answer:any,Answerkeywords:any){
+  addComplexity(value: any) {
+
+  }
+
+  addQuestion(skillId: any, cmpId: any, Question: any, Answer: any, Answerkeywords: any) {
     debugger
-    this.http.post<any>('http://20.192.1.163:3000/qaManager/insertQA',
-    {skillId,cmpId,Question,Answer,Answerkeywords},{headers:this.headers}).subscribe((response) => {
-       this.QAresponse = response.Message;
-    });
+    this.http.post<any>('http://10.10.20.44:5000/qaManager/insertQA',
+      { skillId, cmpId, Question, Answer, Answerkeywords }, { headers: this.headers }).subscribe((response) => {
+        this.QAresponse = response.Message;
+        alert(this.QAresponse)
+        if(this.QAresponse=='Question and Answer inserted successfully!!'){
+          this.SkillId='';
+          this.ComplexityId='';
+          this.Question='';
+          this.answer='';
+          this.Keyword='';
+        }
+      });
   }
 
 
 
   selectFile(event: any): void {
-  // if(event.target.files.type=='text/csv' ||event.target.files.type=='.csv'){
-  //   this.selectedFiles = event.target.files;
-  // }else{
-  //   alert("Only CSV file can upload")
-  // }
+    // if(event.target.files.type=='text/csv' ||event.target.files.type=='.csv'){
+    //   this.selectedFiles = event.target.files;
+    // }else{
+    //   alert("Only CSV file can upload")
+    // }
     this.selectedFiles = event.target.files;
   }
 
@@ -181,8 +188,8 @@ selectedFiles?: FileList;
               this.progress1 = Math.round(100 * event.loaded / event.total);
             } else if (event instanceof HttpResponse) {
               this.message1 = event.body.message;
-              
-              
+
+
               // this.fileInfos = this.uploadService.getFiles();
             }
           },

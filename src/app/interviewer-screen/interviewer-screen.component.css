@@ -167,11 +167,11 @@ mat-slider{
 }
 
 .margin{
-  float:right !import ant;
+  float:right !important;
   padding-top: 3px
 }
 .profile{
-  font-size: 12px !import ant;
+  font-size: 12px !important;
   padding-top: 6px;
   
 }
@@ -183,11 +183,12 @@ mat-slider{
 }
 .QACard_size{
   min-height:250px ;
-  height: auto !import ant ;
+  height: auto !important ;
+  overflow-y: auto;
 }
 .color-size{
   margin-left: 2px;
-  font-size: 13px !import ant;
+  font-size: 13px !important;
   padding-top: 13px;
   padding: 1px;
   border-radius: 2px; 
@@ -207,7 +208,7 @@ button{
   height: 27px;
   
 }
-#div 1,#div 2,#div 3,#div 4,#div 5{
+#div1,#div2,#div3,#div4,#div5{
   display: inline;
 } 
 .spaceL{
@@ -230,7 +231,7 @@ button{
   border: 1px solid transparent;
   padding: 0.786rem 1.5rem;
   border-radius: 0.358rem;
-  box-shadow: 0 1px 20px 1px #ea5455!import ant;
+  box-shadow: 0 1px 20px 1px #ea5455!important;
   font-weight: 500;
   display: inline-block;
   vertical-align: middle;
@@ -240,9 +241,9 @@ button{
  }
  
 .btn-danger {
-  color: #fff!import ant;
-  border-color: #ea5455!import ant;
-  background-color: #ea5455!import ant;
+  color: #fff!important;
+  border-color: #ea5455!important;
+  background-color: #ea5455!important;
 }
 .end-assesment{
   position: fixed;
@@ -251,5 +252,5 @@ button{
     float: right;
 } 
 .btn .end-assesment{
-  box-shadow: 0 1px 20px 1px #ea5455!import ant;
+  box-shadow: 0 1px 20px 1px #ea5455!important;
 }

@@ -40,8 +40,8 @@ mat-form-field{
     
   .new_candidate_btn{
     background-color: green;
-    margin: none !import ant;   
-    padding: none !import ant;
+    margin: none !important;   
+    padding: none !important;
     width:110px;
     float: right;
     margin-right: 2%;
@@ -62,14 +62,15 @@ mat-form-field{
    
   }
   
-  #div 1,#div 2,#div 3,#div 4{
+  #div1,#div2,#div3,#div4{
     display: inline;
   }
   .search_button{
    float: right;
    margin-right: 10%;
+   margin-top: 9px;
    width: 38px;
-   height: 38px;
+   height: 31px;
   }
   /* MatDialog{
     height: 100%;
@@ -104,7 +105,7 @@ button:disabled {
   height: 45px;
   }
   label{
-    margin-bottom: 1% !import ant;
+    margin-bottom: 1% !important;
   }
   
 .cards{

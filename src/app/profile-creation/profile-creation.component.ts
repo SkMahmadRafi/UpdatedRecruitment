@@ -185,6 +185,7 @@ export class ProfileCreationComponent implements OnInit{
           this.SkillA
         )
         .subscribe((response: any) => {
+          alert(response.StatusMessage)
           console.log(response);
         });
     }
@@ -199,7 +200,7 @@ export class ProfileCreationComponent implements OnInit{
   }
   getComplexity() {
     this._http
-      .get<any>('http://20.192.1.163:3000/ComplexityManager')
+      .get<any>('http://10.10.20.44:5000/ComplexityManager')
       .subscribe((response) => {
         this.Complexity = response.result;
         console.log(this.Complexity);
@@ -208,7 +209,7 @@ export class ProfileCreationComponent implements OnInit{
 
   getSkills() {
     this._http
-      .get<any>('http://20.192.1.163:3000/skillsManager')
+      .get<any>('http://10.10.20.44:5000/skillsManager')
       .subscribe((response) => {
         this.Skill = response.result;
         console.log(this.Skill);
@@ -245,7 +246,7 @@ export class ProfileCreationComponent implements OnInit{
   }
   val:any;
   getinfo(emailId:any){
-    this._http.post<any>('http://20.192.1.163:3000/candidateManager/candidateSkill',
+    this._http.post<any>('http://10.10.20.44:5000/candidateManager/candidateSkill',
     {emailId}
   ).subscribe(
   response=>{
@@ -343,19 +344,26 @@ debugger
     console.log(this.selected.value);
   }
 
-  
+  newInterviewDate:any;
   getEndDate(type: string, event: MatDatepickerInputEvent<Date>) {
-    console.log(event.value);
+    debugger
+    // console.log(event.value);
     this.chooseDate = event.value;
-    console.log(this.chooseDate);
-
-    const date = new Date(this.chooseDate);
-    this.newdate = new Intl.DateTimeFormat('en-US', {
-      year: 'numeric',
-      month: 'numeric',
-      day: 'numeric',
-    }).format(date);
-    console.log(this.newdate.toString());
+    let dateObj = new Date(this.chooseDate);
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    this.newInterviewDate= `${year}-${month}-${day}`;
+    
+    // const date = new Date(this.chooseDate);
+    // this.newdate = new Intl.DateTimeFormat('en-US', {
+    //   year: 'numeric',
+    //   month: 'numeric',
+    //   day: 'numeric',
+    // }).format(date);
+// this.newInterviewDate=this.newdate.toString();
+console.log("new date")
+    console.log(this.newInterviewDate);
   }
 
   fetchComplexId() {
@@ -384,11 +392,11 @@ debugger
     this._service
       // .sendingSchedulingDataToBackend(this.canId, this.newdate, this.cId)
       let canId=this.canId;
-      let date=this.value;
+      let date=this.newInterviewDate;
 
       let interviewSkills=this.cId;
       this._http.post(
-        'http://20.192.1.163:3000/candidateInterviewManager/addInterview',
+        'http://10.10.20.44:5000/candidateInterviewManager/addInterview',
         {
           canId,
           date,
@@ -396,14 +404,16 @@ debugger
         }
       )
       .subscribe((response) => {
-        
+        debugger
         console.log(response);
         this.sheduleMessage=response;
+        alert(this.sheduleMessage.StatusMessage)
         
-        this.Mymessage=this.sheduleMessage.statusMessage.StatusMessage;
-        console.log(this.Mymessage)
-        console.log(this.sheduleMessage)
-        alert(this.Mymessage)
+        
+        // this.Mymessage=this.sheduleMessage.StatusMessage;
+        // console.log(this.Mymessage)
+        // console.log(this.sheduleMessage)
+        
       });
   }
 

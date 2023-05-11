@@ -11,7 +11,8 @@ import  { Observable } from 'rxjs';
 })
 export class DataFileService {
 
-  baseUrl='http://20.192.1.163:3000/uploadFileManager';
+  baseUrl='http://10.10.20.44:5000/uploadFileManager';
+  updateUrl = 'http://10.10.20.44:500/update';
 
   headers = new HttpHeaders({'Authorization':`Bearer ${userIdToken}`});
   arr:any=[];
@@ -51,7 +52,7 @@ export class DataFileService {
 
   sendData(emailId:any,phone:any,name:any,experience:any,skills:number)
   {
-    return this._http.post('http://20.192.1.163:3000/candidateManager/saveData',{
+    return this._http.post('http://10.10.20.44:5000/candidateManager/saveData',{
       emailId,
       phone,
       name,
@@ -68,7 +69,7 @@ export class DataFileService {
     experience: any,
     skills: number
   ) {
-    return this._http.post('http://20.192.1.163:3000/candidateManager/saveData', {
+    return this._http.post('http://10.10.20.44:5000/candidateManager/saveData', {
       emailId,
       phone,
       name,
@@ -79,7 +80,7 @@ export class DataFileService {
 
   GettingDataViaEmailId(emailId: any) {
    
-    return this._http.post('http://20.192.1.163:3000/candidateManager/candidateSkill',
+    return this._http.post('http://10.10.20.44:5000/candidateManager/candidateSkill',
       {
         emailId,
       },{headers:this.headers}
@@ -89,7 +90,7 @@ export class DataFileService {
   gettingCandidateDatawithCandidateskill(emailId: any) {
     this.candidateEmail=emailId;
     return this._http.post(
-      'http://20.192.1.163:3000/candidateManager/candidateSkill',
+      'http://10.10.20.44:5000/candidateManager/candidateSkill',
 
       {
         emailId,
@@ -98,7 +99,7 @@ export class DataFileService {
   }
 
   getQA(canId:any, RowandQuestion_number:any,assessmentId:any){
-    return this._http.post<any>('http://20.192.1.163:3000/assessmentStagingManager',{
+    return this._http.post<any>('http://10.10.20.44:5000/assessmentStagingManager',{
       canId,
       RowandQuestion_number,
       assessmentId },
@@ -107,7 +108,7 @@ export class DataFileService {
 
   gettingDataForScheduler(canId: any) {
     return this._http.post(
-      'http://20.192.1.163:3000/candidateManager/displayCandidateSkills',
+      'http://10.10.20.44:5000/candidateManager/displayCandidateSkills',
       {
         canId,
       },{headers:this.headers}
@@ -117,7 +118,7 @@ export class DataFileService {
   sendingSchedulingDataToBackend(canId:any,date:any,interviewSkills:any) {
     debugger;
     return this._http.post(
-      'http://20.192.1.163:3000/candidateInterviewManager/addInterview',
+      'http://10.10.20.44:5000/candidateInterviewManager/addInterview',
       {
         canId,
         date,
@@ -127,14 +128,14 @@ export class DataFileService {
   }
 
   updateCandidateStatus(data:any){
-    return this._http.post('http://20.192.1.163:3000/candidateManager/updateCandidateStatus',
+    return this._http.post('http://10.10.20.44:5000/candidateManager/updateCandidateStatus',
     {
       data
     },{headers:this.headers}
     )
   }
   getAssessments(emailId:any){
-    return this._http.post<any>('http://20.192.1.163:3000/candidateManager/candidateSkill',
+    return this._http.post<any>('http://10.10.20.44:5000/candidateManager/candidateSkill',
     {emailId},{headers:this.headers}
   ).subscribe(response=>{
     this.Assessments=response.data;
@@ -142,14 +143,14 @@ export class DataFileService {
   }
 
   ScheduledCandidates(){
-    return this._http.post<any>('http://20.192.1.163:3000/InterviewFilterManager',{},{headers:this.headers})
+    return this._http.post<any>('http://10.10.20.44:5000/InterviewFilterManager',{},{headers:this.headers})
   }
 
 
 
   ScheduledCandidatesFilter(status:any,name:any,emailId:any,startDate:any,endDate:any){
     
-    return this._http.post<any>('http://20.192.1.163:3000/InterviewFilterManager',
+    return this._http.post<any>('http://10.10.20.44:5000/InterviewFilterManager',
     {
       status,name,emailId,startDate,endDate
     },{headers:this.headers})
@@ -187,7 +188,7 @@ export class DataFileService {
 
     formData.append('file', file);
 
-    const req = new HttpRequest('POST', `${this.baseUrl}/uploadQnA`, formData, {
+    const req = new HttpRequest('POST', `${this.updateUrl}/uploadQA`, formData, {
       reportProgress: true,
       responseType: 'json'
     });

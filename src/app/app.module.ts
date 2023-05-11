@@ -49,6 +49,7 @@ import  { FilterPipe } from './filter.pipe';
 import  { AssessmentRecordComponent } from './assessment-record/assessment-record.component';
 import  { InterviewInfoComponent } from './interview-info/interview-info.component';
 import  { ViewAssessmentComponent } from './view-assessment/view-assessment.component';
+import { UploadformComponent} from './uploadform/uploadform.component'
 
 import  { MsalGuard, MsalInterceptor, MsalModule, MsalRedirectComponent, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
 import  { InteractionType, IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
@@ -80,6 +81,7 @@ export function MSALInstanceFactory():IPublicClientApplication{
     AssesmentScreenComponent,
     EditDataComponent,
     ScoreComponent, 
+    UploadformComponent,
     CanvasJSChart, FilterPipe, AssessmentRecordComponent, InterviewInfoComponent, WebapiComponent , ViewAssessmentComponent
   ],
   imports: [

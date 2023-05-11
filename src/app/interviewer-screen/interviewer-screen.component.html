@@ -2,20 +2,20 @@
 
   <div  class="col-md-12 " >
     <mat-card>
-      <div  class="spaceL" id="div 1">
+      <div  class="spaceL" id="div1">
         <button mat-raised-button color="primary"  (click)="assesmentStart()">Assesment-Start</button>
       </div >
-      <div  class="spaceL" id="div 2">
+      <div  class="spaceL" id="div2">
         <label>Assessment-Id:{{Asid}}</label>
       </div >
 
-      <div  class="spaceL" id="div 3"> 
-        <label>Date: {{Today | date:'MMM-dd'}}</label>
+      <div  class="spaceL" id="div3"> 
+        <label>Date: {{Today}}</label>
       </div >
 
       
       <!--  -->
-      <div  id="div 1">
+      <div  id="div1">
         <div   class="dropdown profiledata" >
           <!-- <mat-icon class="dropbtn profile"></mat-icon> -->
           <label class="dropbtn color-size" ><mat-icon >account_box</mat-icon></label>
@@ -31,7 +31,7 @@
       </div >  
 
 
-      <div   class="dropdown skills" id="div 2">   
+      <div   class="dropdown skills" id="div2">   
         <label class="dropbtn color-size">Skills</label>
          <div  class="dropdown-content">
           <mat-card *ngFor="let skill of Myskills">
@@ -44,7 +44,7 @@
       
       
     
-   <div   id="div 5" class="margin">
+   <div   id="div5" class="margin">
     
     <mat-icon (click)="prevQA()" class="margintop">keyboard_arrow_left</mat-icon>
     <mat-icon (click)="nextQA()" class="margintop">keyboard_arrow_right</mat-icon>  
@@ -101,7 +101,7 @@
     
   </div >
   <div  class="col-lg-4">
-    <mat-card class="size">
+    <mat-card class="size" style="overflow-y: auto;">
       <div  id="div 2" >
         <label> Key Words :</label><br>
          {{newArry[0].answerkeywords}}

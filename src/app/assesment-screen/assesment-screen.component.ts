@@ -86,8 +86,12 @@ export class AssesmentScreenComponent implements OnInit {
   
 
    getCandidates(){
-    debugger
-    this.http.post<any>('http://20.192.1.163:3000/cardsFilterManager',{}
+    let emailId="",
+   name="",
+    status="",
+    startDate="",
+    endDate=""
+    this.http.post<any>('http://10.10.20.44:5000/cardsFilterManager',{emailId,name,status,startDate,endDate}
     ,{headers:this.headers}).subscribe(
       response=>{
         console.log(response)
@@ -166,7 +170,7 @@ export class AssesmentScreenComponent implements OnInit {
     console.log(this.start_date)
     console.log(startDate)
     debugger
-    this.http.post<any>('http://20.192.1.163:3000/cardsFilterManager',
+    this.http.post<any>('http://10.10.20.44:5000/cardsFilterManager',
     {
       status,name,emailId,startDate,endDate
     },{headers:this.headers}).subscribe(

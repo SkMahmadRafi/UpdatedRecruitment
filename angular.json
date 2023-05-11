@@ -67,7 +67,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Utility-app:build:production"
+              "browserTarget": "Utility-app:build:production",
+              "port": 2301
             },
             "development": {
               "browserTarget": "Utility-app:build:development"

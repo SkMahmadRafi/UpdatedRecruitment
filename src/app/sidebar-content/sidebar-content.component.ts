@@ -62,7 +62,7 @@ export class SidebarContentComponent implements OnInit {
   fetchData(skillId: number, compId: number) {
     // debugger;
     return this.httpClient
-      .post<any>('http://20.192.1.163:3000/qaManager/allQA',{
+      .post<any>('http://10.10.20.44:5000/qaManager/allQA',{
         compId,skillId
     },{headers:this.headers})
       .subscribe((response) => {
@@ -89,7 +89,7 @@ export class SidebarContentComponent implements OnInit {
     let queId=this.queId;
     let ansId=this.ansId;
     this.httpClient
-      .post<any>('http://20.192.1.163:3000/qaManager/updateQ',{
+      .post<any>('http://10.10.20.44:5000/qaManager/updateQ',{
        Question,queId,cmpid
     },{headers:this.headers})
       .subscribe((response) => {
@@ -97,12 +97,14 @@ export class SidebarContentComponent implements OnInit {
       });
 
       this.httpClient
-      .post<any>('http://20.192.1.163:3000/qaManager/updateA',{
+      .post<any>('http://10.10.20.44:5000/qaManager/updateA',{
        Answer,ansId,answerkeywords
     },{headers:this.headers})
       .subscribe((response) => {
         
       });
+
+      this.fetchData(this.skill, this.complexity);
 
 }
 
@@ -110,7 +112,7 @@ export class SidebarContentComponent implements OnInit {
  getSkills() {
     //  debugger;
     this.httpClient
-      .get<any>('http://20.192.1.163:3000/skillsManager',{headers:this.headers})
+      .get<any>('http://10.10.20.44:5000/skillsManager',{headers:this.headers})
       .subscribe((response) => {
         this.Skill = response.result;
       });
@@ -118,7 +120,7 @@ export class SidebarContentComponent implements OnInit {
   getComplexity() {
     // debugger;
     this.httpClient
-      .get<any>('http://20.192.1.163:3000/ComplexityManager',{headers:this.headers})
+      .get<any>('http://10.10.20.44:5000/ComplexityManager',{headers:this.headers})
       .subscribe((response) => {
         this.Complexity = response.result;
         // console.log(this.Complexity);
@@ -137,12 +139,12 @@ export class SidebarContentComponent implements OnInit {
   
   edit(data:any){
     debugger;
-    // console.log(data);
+   
     this.queId = data.queid;
     this.ansId = data.ansid;
     this.cmpid = data.cmpid;
     this.answerKeywords = data.answerkeywords;
-  //  console.log(data.answerkeywords);
+  
    
     this.formname.controls.question.setValue(data.question);
     this.formname.controls.answerkeywords.setValue(data.answerkeywords);
@@ -152,6 +154,7 @@ export class SidebarContentComponent implements OnInit {
     
     
     this.popup = true;
+    
   }
 
 

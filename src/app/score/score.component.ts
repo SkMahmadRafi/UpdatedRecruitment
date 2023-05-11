@@ -40,7 +40,8 @@ export class ScoreComponent implements OnInit {
     this.canId=this.scoredata.canid;
     this.FilterDate=this.scoredata.date;
     this.Date = formatDate(this.FilterDate, 'yyyy/MM/dd', 'en-US');
-   this.getData(this.canId,this.Date);
+    this.getData(this.canId,this.Date);
+    
     this.chart.chartOptions.render();
   }
   
@@ -84,10 +85,10 @@ export class ScoreComponent implements OnInit {
       
 
   getData(canId:any,Date:any){
-    this.http.post<any>('http://20.192.1.163:3000/cardsScoreManager/scores',
+    this.http.post<any>('http://10.10.20.44:5000/cardsScoreManager/scores',
     {
     canId,Date
-    },{headers:this.headers}).subscribe(
+    }).subscribe(
       response=>{   
        debugger
      this.array=response.data.skillData;
@@ -100,8 +101,8 @@ export class ScoreComponent implements OnInit {
 i:any=0;
 
   getval(){
-    for (this.i = 0; this.i <= this.array.length; this.i++){
-    this.dataPoints.push({X:this.array[this.i].skillScore,y:this.array[this.i].percentage,label:this.array[this.i].skillname+" "+this.array[this.i].percentage+"%",score:this.array[this.i].skillScore,scored:this.array[this.i].candidatescore,Question:this.array[this.i].count});
+    for (this.i = 0; this.i < this.array.length; this.i++){
+    this.dataPoints.push({X:this.array[this.i].skillscore,y:this.array[this.i].percentage,label:this.array[this.i].skillname+" "+this.array[this.i].percentage+"%",score:this.array[this.i].skillscore,scored:this.array[this.i].candidatescore,Question:this.array[this.i].count});
    
     console.log("------------------------------------------")
     console.log(this.dataPoints)
@@ -112,6 +113,7 @@ i:any=0;
       
      
   console.log(this.dataPoints)
+  
   }
 
   onNoClick(): void {

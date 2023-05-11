@@ -9,7 +9,7 @@ describe('EditDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      import s:[HttpClientTestingModule,FormsModule,ReactiveFormsModule],
+      imports:[HttpClientTestingModule,FormsModule,ReactiveFormsModule],
       declarations: [ EditDataComponent ]
     })
     .compileComponents();

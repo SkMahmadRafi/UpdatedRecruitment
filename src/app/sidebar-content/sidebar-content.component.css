@@ -36,7 +36,7 @@ label{
   margin-right: 1%;
  
 }
-#div 1,#div 2,#div 3,#div 4{
+#div1,#div2,#div3,#div 4{
  display: inline;
 }
 .spaceL{
@@ -96,7 +96,7 @@ form{
  
   cursor: s-resize;
 }
-#div 1,#div 2{
+#div1,#div2{
   display: inline;
 }
 .float{
@@ -138,84 +138,101 @@ form{
 }
  */
 
- button{
+button {
   background-color: green;
   color: white;
   border: none;
   border-radius: 4px;
 }
- .split1{
+
+.split1 {
   height: 10%;
   width: 40%;
-  position: fixed;  
+  position: fixed;
   z-index: 1;
   left: 0;
   overflow-x: hidden;
   padding-top: 40%;
 }
-.split2{
+
+.split2 {
   height: 10%;
   width: 50%;
-  position: fixed;  
+  position: fixed;
   z-index: 1;
   right: 0;
   overflow-x: hidden;
   padding-right: 40%;
   padding-bottom: 90%;
 }
-mat-card{
+
+mat-card {
   margin-top: 1%;
 }
-label{
+
+label {
   margin-left: 30px;
   color: brown;
 }
 
-.container-fluid{
+.container-fluid {
   margin-left: 1%;
   margin-right: 1%;
- 
+
 }
-#div 1,#div 2,#div 3,#div 4{
- display: inline;
+
+#div1,
+#div2,
+#div3,
+#div4 {
+  display: inline;
 }
-.spaceL{
- padding-left: 30px;
- width: 40px;
+
+.spaceL {
+  padding-left: 30px;
+  width: 40px;
 }
-h1{
- text-align: center;
+
+h1 {
+  text-align: center;
 }
-.left{
- padding-left: 85%;
+
+.left {
+  padding-left: 85%;
 }
-.flotleft{
+
+.flotleft {
   float: left;
 }
-mat-slider{
- width:200px;
+
+mat-slider {
+  width: 200px;
 }
-.space{
- padding-right: 30px;
+
+.space {
+  padding-right: 30px;
 }
-.table-bordered{
-   column-width: 20px;
+
+.table-bordered {
+  column-width: 20px;
 }
-form{
-  background-color:rgba(245, 237, 224, 0.32);
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-attachment: fixed;
-   height: 100%;
- }
- div .b {
+
+form {
+  background-color: rgba(245, 237, 224, 0.32);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+div .b {
   text-align: left;
-  
+
 }
 
 .collapsible {
- 
+
   cursor: s-resize;
   padding: 2px;
   margin: 0;
@@ -232,34 +249,36 @@ form{
 
 .active,
 .collapsible:hover {
- 
+
   cursor: s-resize;
 }
-#div 1,#div 2{
+
+#div1,
+#div2 {
   display: inline;
 }
-.float{
-  float: end !import ant;
+
+.float {
+  float: end !important;
   margin-left: 90%;
 }
 
-.editBtn{
- 
-}
+/* .editBtn {} */
 
 
-.color{
+.color {
   color: rgba(32, 32, 211, 0.89);
 }
 
 .collapsible:after {
-  
+
   font-size: 13px;
   color: black;
   float: right;
   margin-right: 5px;
 
 }
+
 .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
@@ -267,21 +286,20 @@ form{
   padding: 3px;
   float: right;
 }
+
 .up {
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }
 
-.modal.show{
- display: block;
+.modal.show {
+  display: block;
 }
 
-.input{
-  width:90%;
+.input {
+  width: 90%;
 }
 
-.cmp{
+.cmp {
   margin-left: 5px;
 }
-
-

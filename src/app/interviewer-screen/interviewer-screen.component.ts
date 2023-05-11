@@ -37,7 +37,7 @@ export class InterviewerScreenComponent implements OnInit {
   hideMe:boolean=false;
   nextI=0;
   i=1;
-  Today: Date=new Date();
+  Today: any;
   sliderOutput=0;
   skill=0;
   complexity=0;
@@ -96,8 +96,15 @@ InterviewId:any;
 InterviewDate:any;
 
 getCandidateDetails(){  
+  debugger
   this.candidate=this.dfs.arr;
   this.profile();
+ 
+  let dateObj = new Date(this.candidate.date);
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    this.Today= `${year}-${month}-${day}`;
   console.log(this.candidate)
 }
 skillNameN:any;
@@ -147,7 +154,7 @@ complexityN:any;
   getQueAns(canId:any,Date:any,starttime:any,InterviewId:any,skills:any,RowandQuestion_number:any){
     debugger;
     try{
-    this.httpClient.post<any>('http://20.192.1.163:3000/randomizationManager',
+    this.httpClient.post<any>('http://10.10.20.44:5000/randomizationManager',
     {
     canId,Date,starttime,InterviewId,skills
     },{headers:this.headers}).subscribe(
@@ -201,7 +208,7 @@ complexityN:any;
     let score=this.recruiterData.controls['score'].value;
     let notes=this.recruiterData.controls['note'].value;
       
-    this.httpClient.post<any>('http://20.192.1.163:3000/assessmentStagingManager/saveData',
+    this.httpClient.post<any>('http://10.10.20.44:5000/assessmentStagingManager/saveData',
     {
       canId,
       RowandQuestion_number,
@@ -259,7 +266,7 @@ complexityN:any;
     let assessmentId=this.Asid;
     let endTime=this.Time;
     let InterviewId=this.InterviewId;
-    this.httpClient.post<any>('http://20.192.1.163:3000/assessmentManager/endAssessment',
+    this.httpClient.post<any>('http://10.10.20.44:5000/assessmentManager/endAssessment',
     {
       status,
       canId,
@@ -268,11 +275,13 @@ complexityN:any;
       InterviewId
     },{headers:this.headers}).subscribe(
       response=>{
-        alert(response.status); 
-        console.log(response);
+        this.endStatus=response;
+        alert(this.endStatus.Status.StatusMessage); 
+        console.log(this.endStatus.Status.StatusMessage);
       })
   }
 
+  endStatus:any;
 //for hiding answer
   hideAnswer()
   {

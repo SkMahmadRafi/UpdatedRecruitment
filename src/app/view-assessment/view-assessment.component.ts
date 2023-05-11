@@ -16,6 +16,7 @@ export class ViewAssessmentComponent implements  OnInit,OnDestroy {
   assessmentDetails : any ;
 
   ngOnInit(): void {
+    debugger;
     this.canData   = this.dfs.canInfo ;
     this.getQA();
 
@@ -30,12 +31,13 @@ export class ViewAssessmentComponent implements  OnInit,OnDestroy {
 getQA () : void {
    
     let interviewid = this.canData.interviewid;
-  this.http.post<any>('http://20.192.1.163:3000/allqa/allQAC' , {interviewid}
+  this.http.post<any>('http://10.10.20.44:5000/allqa/allQAC' , {interviewid}
     ).subscribe(
       response => {
         this.assessmentInfo = response.result;
         this.date = response.date;
         this.assessmentDetails = response.details;
+      console.log(response);
       
         
       }
